@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div onclick="add_shopping(this)">加入购物车</div>
+<div>筛选</div>
+<div class="color" onclick="Filtrate(this)">红</div>
+<div class="true" onclick="Filtrate(this)">人民币</div>
+<div class="box">
+</div>
+
+<div onclick="btns(this)" class="jiesuan">结算</div>
+<div onclick="order(this)">订单生产</div>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+/*------------------------------商品展示页--------------------------------------*/
+
+    function select() {
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'select',
+            },
+            success(res) {
+                console.log(res);
+            }
+        })
+    }
+
+    //筛选
+    function Filtrate(btn){
+        //接受参数
+        const sx = $(btn).text();
+        console.log(sx)
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'Filtrate',
+                condition:sx,
+            },
+            success(res){
+                console.log(res);
+                let obj = JSON.parse(res);
+                $('.box').html('');
+                for (let item of obj){
+                    let tr = $(`
+                <div class="gw">
+                    <div  class="img"><img src="${item.img}"></div>
+                    <div type="text" class="name">${item.goodname}</div>
+                    <div type="text" class="price">${item.price}</div>
+                    <div type="text" class="true">${item.texttrue}</div>
+                    <div type="te xt" class="color">${item.color}</div>
+                    <div type="text" class="size">${item.size}</div>
+                    <div type="text" class="theme">${item.theme}</div>
+                    <div type="text" class="number">${item.time}</div>
+                </div>
+                `);
+                    $('.box').append(tr);
+                }
+            }
+        })
+    }
+
+    /*------------------------------详情页-------------------------------------*/
+    function pc_select(){
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'pc_select',
+                gid:2.
+            },
+            success(res) {
+                console.log(res);
+            }
+        })
+    }
+    // pc_select();
+    //加入购物车
+    function add_shopping(){
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'add_shopping',
+                uid:6,
+                gid:3,
+                count:66,
+                texttrue:'钛合金',
+                color:'蓝',
+                size:'H',
+                theme:'风',
+            },
+            success(res){
+                console.log(res);
+            }
+        })
+    }
+    /*------------------------------购物车部分--------------------------------*/
+
+    let s_gid;//代表了在购车车中展示商品信息时的gid
+    let s_uid;//代表了在购物车中展示商品信息时的uid
+//根据用户id查看对应购物车中的商品信息
+function sp_select(){
+    $.ajax({
+        type:'post',
+        url:'../controller/shoppingDao.php',
+        data:{
+            type:'sp_select',
+            uid:2,
+        },
+        success(res){
+            const obj = JSON.parse(res);
+            console.log(obj);
+            //遍历取
+            for (let item of obj){
+                s_gid = item.gid ;
+                let num = item.count;
+                $('.number').val(item.count)
+                //通过商品id取商品信息
+                $.ajax({
+                    type:'post',
+                    url:'../controller/shoppingDao.php',
+                    data: {
+                        type:'sp_increase',
+                        gid: s_gid,
+                    },
+                    success(res) {
+                        const obj = JSON.parse(res);
+                        for (let item of obj){
+                            let ts = $(`
+                 <div class="gw">
+                    <div  class="img"><img src="${item.img}"></div>
+                    <div type="text" class="name">${item.goodname}</div>
+                    <div type="text" class="price">${item.price}</div>
+                    <div type="text" class="number">${num}</div>
+                    <div type="text" class="true">${item.texttrue}</div>
+                    <div type="text" class="color">${item.color}</div>
+                    <div type="text" class="size">${item.color}</div>
+                    <div type="text" class="theme">${item.theme}</div>
+                    <div type="text" class="number">${item.time}</div>
+                </div>
+            `);
+                            $('.box').append(ts);
+                            console.log(obj);
+                            //页面渲染
+                            // let tr =  $(`<img src="${item.img}">`);
+                            // $('.img').append(tr);
+                            // $('.name').val(item.goodname);
+                            // $('.price').val(item.price);
+                            // $('.color').val(item.color);
+                            // $('.true').val(item.texttrue);
+                            // $('.theme').val(item.theme);
+                            // $('.size').val(item.size);
+
+                        }
+
+                    }
+                })
+            }
+
+        }
+    })
+}
+sp_select();
+
+
+    function btns(btn) {
+       //只需要获取gid和count即可
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'sp_account',
+                uid:1,
+                gid: 2,
+                count:13,
+            },
+            success(res){
+                console.log(res);
+            }
+        })
+    }
+    //在订单信息表中展示选购的信息
+    function select_order() {
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'sp_generate',
+                uid:1,
+                gid: 2,
+                count:13,
+            },
+            success(res){
+                console.log(res);
+            }
+        })
+    }
+    // select_order();
+    //生成订单
+    function order() {
+
+        //获取关键信息
+        $.ajax({
+            type:'post',
+            url:'../controller/shoppingDao.php',
+            data:{
+                type:'order_cj',
+                uid:1,
+                tel:13720725061,
+                uname:'赵四',
+                ustie:'陕西省西安市莲湖区大兴西路社区',
+                count: 18,
+                goods:2,
+                time:'2019年11月4日',
+                status:'已下单',
+            },
+            success(res) {
+                console.log(res);
+            }
+        })
+    }
+</script>
+</body>
+</html>

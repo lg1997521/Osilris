@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box img{
+            width: 200px;
+
+
+        }
+        .delet{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="" onclick="add_sp(this)">添加</div>
+    <div onclick="Filtrate_T1(this)">珠宝</div>
+    <div onclick="Filtrate_T1(this)">首饰</div>
+    <div onclick="Filtrate_T2(this)">吊坠</div>
+    <div onclick="Filtrate_T2(this)">戒指</div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        //添加商品
+        function add_sp(btn) {
+           $.ajax({
+               type:'post',
+               url:'../controller/htglDao.php',
+               data:{
+                   type:'add_sp',
+                   goodname:'星之守护者--莎拉',
+                   img:'http://localhost/XAH190603/PHP全栈/每日作业3/11-1/resource/images/commodity/bg7.jpg',
+                   magnifying:'http://localhost/XAH190603/PHP全栈/每日作业3/11-1/resource/images/commodity/bg7.jpg',
+                   price:189.9,
+                   particulars:'人面不知何处去',
+                   Serialnumber:'荣耀',
+                   T1:1,
+                   T2:0,
+                   texttrue:'金坷垃',
+                   color:'橙色',
+                   size:'D',
+                   theme:'射',
+                   time:'2019年11月4日',
+               },
+               success(res){
+                   console.log(res);
+               }
+           })
+        };
+        //查看商品信息
+        function select_sp() {
+            $.ajax({
+                type:'post',
+                url: '../controller/htglDao.php',
+                data:{
+                    type:'select_sp'
+                },
+                success(res) {
+                    const obj = JSON.parse(res);
+                    for (let item of obj){
+                        let tr = $(`
+                <div class="gw">
+                    <div  class="img"><img src="${item.img}"></div>
+                    <div type="text" class="name">${item.goodname}</div>
+                    <div type="text" class="price">${item.price}</div>
+                    <div type="text" class="true">${item.texttrue}</div>
+                    <div type="text" class="color">${item.color}</div>
+                    <div type="text" class="size">${item.size}</div>
+                    <div type="text" class="theme">${item.theme}</div>
+                    <div type="text" class="number">${item.time}</div>
+                    <div class="delet" onclick="del(this)" data-id="${item.id}">删除</div>
+                    <div class="" onclick="update_sp(this)" data-id="${item.id}">修改</div>
+                </div>
+                `);
+                        $('.box').append(tr);
+
+                    }
+                }
+            })
+        }
+        select_sp();
+        //删除
+        function del(btn) {
+            // $(btn).parent().remove();
+            const id = $(btn).attr('data-id');
+            console.log(id)
+            $.ajax({
+                type:'post',
+                url:'../controller/htglDao.php',
+                data:{
+                    type:'delete_sp',
+                    id:id,
+                },
+                success(res){
+                    console.log(res);
+                }
+            })
+        }
+    //删除
+    function update_sp(btn) {
+        const id = $(btn).attr('data-id');
+        $.ajax({
+            type:'post',
+            url:'../controller/htglDao.php',
+            data:{
+                type:'add_sp',
+                id:id,
+                goodname:'星之守护者--辛德拉',
+                img:'http://localhost/XAH190603/PHP全栈/每日作业3/11-1/resource/images/commodity/bg6.jpg',
+                magnifying:'http://localhost/XAH190603/PHP全栈/每日作业3/11-1/resource/images/commodity/bg6.jpg',
+                price:148.9,
+                particulars:'桃花依旧笑春风',
+                Serialnumber:'荣耀',
+                T1:1,
+                T2:0,
+                texttrue:'金坷垃',
+                color:'橙色',
+                size:'D',
+                theme:'射',
+                time:'2019年11月4日',
+            },
+            success(res) {
+                console.log(res);
+            }
+        })
+    }
+
+    function Filtrate_T1(btn) {
+        let sx = $(btn).text();
+        console.log(sx);
+        if (sx == '珠宝'){
+            sx = 0;
+        }else {
+            sx = 1;
+        }
+        console.log(sx);
+        $.ajax({
+            type:'post',
+            url:'../controller/htglDao.php',
+            data:{
+                type:'Filtrate_T1',
+                T1:sx,
+            },
+            success(res){
+                $('.box').html('');
+                const obj  = JSON.parse(res);
+                for (let item of obj){
+                    let tr = $(`
+                <div class="gw">
+                    <div  class="img"><img src="${item.img}"></div>
+                    <div type="text" class="name">${item.goodname}</div>
+                    <div type="text" class="price">${item.price}</div>
+                    <div type="text" class="true">${item.texttrue}</div>
+                    <div type="text" class="color">${item.color}</div>
+                    <div type="text" class="size">${item.size}</div>
+                    <div type="text" class="theme">${item.theme}</div>
+                    <div type="text" class="number">${item.time}</div>
+                    <div class="delet" onclick="del(this)" data-id="${item.id}">删除</div>
+                    <div class="" onclick="update_sp(this)" data-id="${item.id}">修改</div>
+                </div>
+                `);
+                    $('.box').append(tr);
+
+                }
+            }
+        })
+    }
+    //二级类搜索
+        function Filtrate_T2(btn) {
+            let T2 = $(btn).text();
+            if (T2 == '吊坠'){
+                T2 = 0;
+            }else {
+                T2 = 1;
+            }
+            console.log(T2);
+            $.ajax({
+                type:'post',
+                url:'../controller/htglDao.php',
+                data:{
+                    type:'Filtrate_T2',
+                    T1:0,
+                    T2,
+                },
+                success(res){
+                    $('.box').html('');
+                    const obj  = JSON.parse(res);
+                    for (let item of obj){
+                        let tr = $(`
+                <div class="gw">
+                    <div  class="img"><img src="${item.img}"></div>
+                    <div type="text" class="name">${item.goodname}</div>
+                    <div type="text" class="price">${item.price}</div>
+                    <div type="text" class="true">${item.texttrue}</div>
+                    <div type="text" class="color">${item.color}</div>
+                    <div type="text" class="size">${item.size}</div>
+                    <div type="text" class="theme">${item.theme}</div>
+                    <div type="text" class="number">${item.time}</div>
+                    <div class="delet" onclick="del(this)" data-id="${item.id}">删除</div>
+                    <div class="" onclick="update_sp(this)" data-id="${item.id}">修改</div>
+                </div>
+                `);
+                        $('.box').append(tr);
+
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>
