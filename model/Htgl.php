@@ -77,4 +77,5 @@ class Manage{
             echo '{"code":"0"}';
         }
     }
+    //
 }
