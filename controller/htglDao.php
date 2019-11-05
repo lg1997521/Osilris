@@ -23,8 +23,9 @@ switch ($type){
     $color = $_POST['color'];
     $size = $_POST['size'];
     $theme = $_POST['theme'];
+    $count = $_POST['count'];
     $timer = $_POST['time'];
-    $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$timer);
+    $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$timer);
     $manage->add_sp($commodity);
     break;
     //删除商品信息
@@ -47,8 +48,9 @@ switch ($type){
     $color = $_POST['color'];
     $size = $_POST['size'];
     $theme = $_POST['theme'];
+    $count = $_POST['count'];
     $timer = $_POST['time'];
-    $commodity = new Commoditys($id,$goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$timer);
+    $commodity = new Commoditys($id,$goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$timer);
     $manage->updata_sp($commodity);
     break;
     //一级类搜索
