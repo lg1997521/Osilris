@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="collect.css">
+    
+</head>
+
+<body>
+    <div class="account ">
+        <div class="up">
+            <div class="up-a">我的账户</div>
+            <div class="up-b">欢迎先生航赵</div>
+            <div>在此部分，您可以更改个人详情、管理订单、查看愿望清单等。</div>
+            <a href="">登出</a>
+        </div>
+        <div class="middle">
+            <a href="">
+                < &nbsp; 返回 </a> <div>
+                    <a href="">主页</a>
+                    <span>/</span>
+                    <a href="">我的账户</a>
+                    <span>/</span>
+                    <a href="">礼品清单</a>
+        </div>
+    </div>
+    <div class="data">
+        <a href="">个人资料</a>
+        <a href="">新闻通讯</a>
+        <a href="">订单历史记录</a>
+        <a href="">手机礼品列表</a>
+        <a href="">BE SWAROVSKI</a>
+    </div>
+        <div class="tab">
+    <!--<div class="row">-->
+        <!--<div class="down">-->
+            <!--<div class="picture">-->
+                <!--<a href="">-->
+                    <!--<div class="map">-->
+
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="join">-->
+                <!--<div class="price ">-->
+                    <!--<a href="">-->
+                        <!--MAGIC ANGEL 耳钉, 白色, 镀玫瑰金色调</a>-->
+                    <!--<span>¥ 699.00-->
+                    <!--</span>-->
+                <!--</div>-->
+                <!--<div>产品编号: 5498971</div>-->
+                <!--<div class="history">-->
+                    <!--<div class="btn">-->
+                        <!--<button type="button" disabled="disabled">-->
+                            <!--<span>在您的购物袋中</span>-->
+                        <!--</button>-->
+                        <!--<button type="submit" data-added-message="在您的购物袋中">-->
+                            <!--<span>添加到购物袋</span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="btn-i">-->
+                        <!--<button class="line">-->
+                            <!--<span></span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="ipt">-->
+                    <!--<input type="checkbox"></div>-->
+                <!--<span>SHARE VIA E-MAIL</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+        </div>
+    <div class="carousel">
+        <div class="add">
+            <div>您是否希望购买全部愿望清单上的商品？</div>
+            <button>全部添加到购物袋</button>
+        </div>
+        <div class="ed">浏览 MAGIC ANGEL 耳钉, 白色, 镀玫瑰金色调 的人还喜欢</div>
+        <div class="layui-carousel" id="test2" style="margin-top: 15px;margin:0 auto; ">
+                <div carousel-item="" style="background:#fff;">
+                    <div class="tt">
+                        <div>
+                            <a href=""></a>
+                            <img src="img/ed1.jpg" alt="">
+                            <div>Magic 穿孔...</div>
+                            <div>¥ 999.00</div>
+                        </div>
+                        <div>
+                            <a href=""></a>
+                            <img src="img/ed3.jpg" alt="">
+                            <div>Bella V 穿孔...</div>
+                            <div>¥ 699.00</div>
+                        </div>
+                        <div>
+                            <a href=""></a>
+                            <img src="img/ed2.jpg" alt="">
+                            <div>Penélope Cruz...</div>
+                            <div>¥ 999.00</div>
+                        </div>
+                    </div>
+                    <div class="tt">
+                        <div>
+                            <a href=""></a>
+                            <img src="img/ed5.jpg" alt="">
+                            <div>Lilia 穿孔...</div>
+                            <div>¥ 599.00</div>
+                        </div>
+                        <div>
+                            <a href=""></a>
+                            <img src="img/ed6.jpg" alt="">
+                            <div>Sunshine 穿孔...</div>
+                            <div>¥ 1,190.00</div>
+                        </div>
+                        <div>
+                            <a href=""></a>
+                            <img src="img/ed7.jpg" alt="">
+                            <div>Magic 穿孔...</div>
+                            <div>¥ 999.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    <script src="./layui/layui.all.js"></script>
+    <script src="collect.js"></script>
+    <script>
+            var bb = document.getElementsByClassName('.header-b');
+            layui.use(['carousel', 'form'], function () {
+                var carousel = layui.carousel
+                    , form = layui.form;
+
+                //常规轮播
+                carousel.render({
+                    elem: '#test1'
+                    , arrow: 'always'
+                });
+
+                //改变下时间间隔、动画类型、高度
+                carousel.render({
+                    elem: '#test2'
+                    , interval: 1800
+                    , anim: 'fade'
+                    , height: '225px'
+                });
+
+                //设定各种参数
+                var ins3 = carousel.render({
+                    elem: '#test3'
+                });
+                //图片轮播
+                carousel.render({
+                    elem: '#test10'
+                    , width: '225px'
+                    , height: '225px'
+                    , interval: 5000
+                });
+
+                //事件
+                carousel.on('change(test4)', function (res) {
+                    console.log(res)
+                });
+
+                var $ = layui.$, active = {
+                    set: function (othis) {
+                        var THIS = 'layui-bg-normal'
+                            , key = othis.data('key')
+                            , options = {};
+
+                        othis.css('background-color', '#5FB878').siblings().removeAttr('style');
+                        options[key] = othis.data('value');
+                        ins3.reload(options);
+                    }
+                };
+
+                //监听开关
+                form.on('switch(autoplay)', function () {
+                    ins3.reload({
+                        autoplay: this.checked
+                    });
+                });
+
+                $('.demoSet').on('keyup', function () {
+                    var value = this.value
+                        , options = {};
+                    if (!/^\d+$/.test(value)) return;
+
+                    options[this.name] = value;
+                    ins3.reload(options);
+                });
+
+                //其它示例
+                $('.demoTest .layui-btn').on('click', function () {
+                    var othis = $(this), type = othis.data('type');
+                    active[type] ? active[type].call(this, othis) : '';
+                });
+            });
+            
+        </script>
+
+</body>
+
+</html>
