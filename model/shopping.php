@@ -22,6 +22,25 @@ class Commodity
             echo '{"code":"0"}';
         }
     }
+    function  prices(){
+       $sql = "select * from commodity order by price DESC ";
+       $res = $this->db->query($sql);
+      if($res){
+         echo json_encode($res);
+      }else{
+        echo '{"code":"0"}';
+      }
+   }
+    function  prices1(){
+        $sql = "select * from commodity order by price asc ";
+        $res = $this->db->query($sql);
+        if($res){
+            echo json_encode($res);
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
+    //
     //筛选
     function Filtrate($condition){
         $sql = "select * from commodity where color = '{$condition}'";
@@ -109,6 +128,7 @@ class Commodity
             echo '{"code":"0"}';
         }
     }
+//价格排序
 
     /*------------------------后台管理部分---------------------------------------*/
 
