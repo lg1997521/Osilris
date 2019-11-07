@@ -119,5 +119,112 @@
 <script src="../plug/layui/layui.js" charset="utf-8"></script>
 <script src="../js/goods.js"></script>
 <!--<script src="../js/goods1.js"></script>-->
+<script>
+    layui.use(['carousel', 'form'], function () {
+        var carousel = layui.carousel
+            , form = layui.form;
+
+        //常规轮播
+        carousel.render({
+            elem: '#test1'
+            , arrow: 'always'
+        });
+
+        //改变下时间间隔、动画类型、高度
+        carousel.render({
+            elem: '#test2'
+            , interval: 1800
+            , anim: 'fade'
+            , height: '225px'
+        });
+
+        //设定各种参数
+        var ins3 = carousel.render({
+            elem: '#test3'
+        });
+        //图片轮播
+        carousel.render({
+            elem: '#test10'
+            , width: '225px'
+            , height: '225px'
+            , interval: 5000
+        });
+
+        //事件
+        carousel.on('change(test4)', function (res) {
+            console.log(res)
+        });
+
+        var $ = layui.$, active = {
+            set: function (othis) {
+                var THIS = 'layui-bg-normal'
+                    , key = othis.data('key')
+                    , options = {};
+
+                othis.css('background-color', '#5FB878').siblings().removeAttr('style');
+                options[key] = othis.data('value');
+                ins3.reload(options);
+            }
+        };
+
+        //监听开关
+        form.on('switch(autoplay)', function () {
+            ins3.reload({
+                autoplay: this.checked
+            });
+        });
+
+        $('.demoSet').on('keyup', function () {
+            var value = this.value
+                , options = {};
+            if (!/^\d+$/.test(value)) return;
+
+            options[this.name] = value;
+            ins3.reload(options);
+        });
+
+        //其它示例
+        $('.demoTest .layui-btn').on('click', function () {
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+    });
+    window.onscroll = function () {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop > 200) {
+                $('.header-b').css({
+                    position: 'fixed',
+                    left: '0',
+                    top: '0',
+                    background: '#fff',
+                    transition: '.5s',
+                    zIndex: '10000'
+                }),
+                    $('.yt').css({
+                        display: 'block'
+                    }),
+                    $('.dz').css({
+                        display: 'block'
+                    }),
+                    $('.dlzc').css({
+                        display: 'block'
+                    })
+            }
+            if (scrollTop < 200) {
+                $('.header-b').css({
+                    position: 'relative',
+                    transition: '.5s'
+                }),
+                    $('.yt').css({
+                        display: 'none'
+                    }),
+                    $('.dz').css({
+                        display: 'none'
+                    }),
+                    $('.dlzc').css({
+                        display: 'none'
+                    })
+            }
+        }
 </html>
 
