@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/goods.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="120" column="46" lean-forward="true" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+            <state relative-caret-position="426">
+              <caret line="130" column="26" lean-forward="true" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -49,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/swarovski.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="908" column="13" lean-forward="true" selection-start-line="802" selection-start-column="8" selection-end-line="908" selection-end-column="13" />
+            <state relative-caret-position="6810">
+              <caret line="805" column="40" lean-forward="true" selection-start-line="805" selection-start-column="40" selection-end-line="805" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -58,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2060">
-              <caret line="632" column="35" selection-start-line="632" selection-start-column="35" selection-end-line="632" selection-end-column="35" />
+            <state relative-caret-position="-1100">
+              <caret line="663" column="46" lean-forward="true" selection-start-line="663" selection-start-column="46" selection-end-line="663" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -107,10 +107,10 @@
         <option value="$PROJECT_DIR$/controller/htglDao.php" />
         <option value="$PROJECT_DIR$/web/htgl.html" />
         <option value="$PROJECT_DIR$/model/Htgl.php" />
-        <option value="$PROJECT_DIR$/web/swarovski.html" />
         <option value="$PROJECT_DIR$/web/index.js" />
         <option value="$PROJECT_DIR$/web/shopping.html" />
         <option value="$PROJECT_DIR$/web/swarovski.css" />
+        <option value="$PROJECT_DIR$/web/swarovski.html" />
         <option value="$PROJECT_DIR$/web/goods.html" />
       </list>
     </option>
@@ -223,12 +223,12 @@
       <workItem from="1572936756410" duration="1789000" />
       <workItem from="1572953729547" duration="1728000" />
       <workItem from="1573001745575" duration="598000" />
-      <workItem from="1573129289944" duration="2794000" />
+      <workItem from="1573129289944" duration="4530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10092000" />
+    <option name="totallyTimeSpent" value="11828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -314,13 +314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2060">
-          <caret line="632" column="35" selection-start-line="632" selection-start-column="35" selection-end-line="632" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -328,17 +321,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1100">
+          <caret line="663" column="46" lean-forward="true" selection-start-line="663" selection-start-column="46" selection-end-line="663" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/swarovski.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="908" column="13" lean-forward="true" selection-start-line="802" selection-start-column="8" selection-end-line="908" selection-end-column="13" />
+        <state relative-caret-position="6810">
+          <caret line="805" column="40" lean-forward="true" selection-start-line="805" selection-start-column="40" selection-end-line="805" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/goods.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="120" column="46" lean-forward="true" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+        <state relative-caret-position="426">
+          <caret line="130" column="26" lean-forward="true" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
         </state>
       </provider>
     </entry>
