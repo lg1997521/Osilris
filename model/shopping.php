@@ -31,6 +31,10 @@ class Commodity
         echo '{"code":"0"}';
       }
    }
+   //模糊查询
+    function dim(){
+        
+    }
     function  prices1(){
         $sql = "select * from commodity order by price asc ";
         $res = $this->db->query($sql);
