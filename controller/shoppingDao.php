@@ -37,12 +37,12 @@ switch ($type){
 
     /*---------------------购物车部分-----------------------*/
 
-    case 'sp_increase'://加入购物车
+    case 'sp_increase'://通过gid查询商品信息
         $gid = $_POST['gid'];
         $commodity->sp_increase($gid);
         break;
 
-    case 'sp_select'://购物车的商品查询
+    case 'sp_select'://查询当前uid的购物信息
         $uid = $_POST['uid'];
 
         $commodity->sp_select($uid);
