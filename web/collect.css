@@ -1,0 +1,231 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+a{
+   text-decoration: none;
+   color:#000;
+}
+input[type="checkbox"]{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #b8b7b6;
+    width:17px;
+    height:17px;
+    outline: none;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+}
+input[type="checkbox"]:checked::after{
+    background: url(img/dg.svg) no-repeat center;
+    background-size: contain;
+    content: "";
+    left: 25%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    width: 50%;
+}
+.up-a{
+    font-size: 50px;
+}
+.up-b{
+    font-size: 22px;
+}
+.up>div{
+    width: 80vw;
+    margin:5px auto;
+    text-align: center;
+}
+.up>a{
+    margin:0 auto;
+    display:block;
+    width:150px;
+    color:#fff;
+    text-align: center;
+    padding:20px;
+    background:#000;
+}
+.middle{
+    width:80vw;
+    margin:10px auto;
+}
+.middle>div{
+    width:72vw;
+    text-align: center;
+    display: inline-block;
+}
+.data{
+    width:80vw;
+    margin:0 auto;
+    text-align: center;
+}
+.data>a{
+    padding:10px 10px;
+    border-bottom: 1px solid #999;
+}
+.row{
+    width:80vw;
+    margin:0 auto;
+    border-bottom: 1px solid #999;
+    padding:100px 0 50px 200px;
+}
+.down>div{
+    display: inline-block;
+    width:300px;
+    height:225px;
+    vertical-align:top;
+}
+.price>span{
+    padding-left:40px;
+}
+button[type=submit] {
+    cursor: pointer;
+}
+button{
+    background: transparent;
+    line-height: inherit;
+    overflow: visible;
+    font: inherit;
+    height: auto;
+    border:0;
+    outline: none;
+    border: 3px solid #231161;
+    color: #231161;
+    font-size: 16px;
+    display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
+    padding: 12px;
+    width: 222px;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+button[disabled] {
+    min-height: 55px;
+    height: auto;
+    border-color: #b8b7b6;
+    color: #b8b7b6 !important;
+    border: 3px solid  #b8b7b6;
+    font-size: 16px;
+    padding: 12px;
+    width: 222px;
+    display: none;
+}
+.btn>span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn-i>button>span{
+    background:url(img/ljx.svg);
+    height: 20px;
+    width: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.btn-i>.line{
+    border-bottom: 1px solid #b8b7b6;
+    border-top: 1px solid #b8b7b6;
+    width:55px;
+    padding:9px;
+    border-right: 0;
+    border-left: 0;
+}
+.btn{
+    width:251px;
+    display: inline-block;
+}
+.btn-i{
+    width:148px;
+    display: inline-block;
+    text-align: right;
+}
+.history{
+    margin:20px auto;
+}
+.down{
+    width:80vw;
+}
+.ipt{
+    width:20px;
+    display: inline-block;
+}
+.down>.join{
+    width: 415px;
+}
+.join>div{
+    margin-top:20px;
+}
+.map{
+    width:225px;
+    height:225px;
+    background:url(img/mobile\ \(5\).jpg)
+}
+.carousel{
+    text-align: center;
+    padding:40px 0 ;
+    border-bottom: 1px solid #b8b7b6;
+}
+.add,.add>div,.ed{
+    color: #000;
+    font-family: 'Futura', 'Futura', 'Century Gothic', 'CenturyGothic', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    padding:40px;
+}
+.tt>div>a{
+    width:170px;
+    height:170px;
+    padding-top:45%;
+    text-align: center;
+    background:#eee;
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: 0;
+    display: inline-block;
+}
+.tt>div{
+    position: relative;
+    width:170px;
+    height:170px;
+    display: inline-block;
+    margin:20px;
+}
+.tt>div>img{
+    width:170px;
+    height:170px;
+    display: inline-block;
+  
+}
+.tt>div>div{
+    text-align: center;
+    width:170px;
+}
+.add>button{
+    background-color: #231161;
+    color:#fff;
+}
+@media screen and (max-width:1024px){
+    .up>div,.middle,.data,.row,.down,.carousel>div{
+        width: 1024px;
+    }
+    .middle,.row{
+        padding-left:90px;
+    }
+    .middle>div{
+       
+        width:745px;
+    }
+    .up>a{
+        margin-left:425px;
+    }
+
+}
