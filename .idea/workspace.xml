@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf9af382-576b-42d9-bf4e-58bda0881275" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/shoppingDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/shoppingDao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/goods.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/goods.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/shopping.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/shopping.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/goods.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/swarovski.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/swarovski.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/swarovski.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/swarovski.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/swarovski.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="67" column="56" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+            <state relative-caret-position="421">
+              <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -94,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/swarovski.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-885">
-              <caret line="109" column="29" lean-forward="true" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
+            <state relative-caret-position="315">
+              <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -249,12 +243,12 @@
       <workItem from="1573001745575" duration="598000" />
       <workItem from="1573129289944" duration="7136000" />
       <workItem from="1573177119245" duration="36000" />
-      <workItem from="1573179049691" duration="15245000" />
+      <workItem from="1573179049691" duration="16219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29715000" />
+    <option name="totallyTimeSpent" value="30689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -425,15 +419,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/swarovski.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="67" column="56" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+        <state relative-caret-position="421">
+          <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/swarovski.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-885">
-          <caret line="109" column="29" lean-forward="true" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
+        <state relative-caret-position="315">
+          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
         </state>
       </provider>
     </entry>
