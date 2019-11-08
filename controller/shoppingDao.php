@@ -88,7 +88,17 @@ switch ($type){
         $price = $_POST['price'];
         $commodity->price_cj($pid,$price);
     /*---------------------后台管理部分-----------------------*/
-    //
+    //收藏页
+    case 'sp_collect'://通过gid查询商品信息
+        $gid = $_POST['gid'];
+        $commodity->sp_collect($gid);
+        break;
+
+    case 'z_collect'://查询当前uid的购物信息
+        $uid = $_POST['uid'];
+
+        $commodity->z_collect($uid);
+        break;
 }
 
 ?>
