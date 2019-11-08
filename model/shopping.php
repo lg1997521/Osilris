@@ -22,6 +22,29 @@ class Commodity
             echo '{"code":"0"}';
         }
     }
+    function  prices(){
+       $sql = "select * from commodity order by price DESC ";
+       $res = $this->db->query($sql);
+      if($res){
+         echo json_encode($res);
+      }else{
+        echo '{"code":"0"}';
+      }
+   }
+   //模糊查询
+    function dim(){
+        
+    }
+    function  prices1(){
+        $sql = "select * from commodity order by price asc ";
+        $res = $this->db->query($sql);
+        if($res){
+            echo json_encode($res);
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
+    //
     //筛选
     function Filtrate($condition){
         $sql = "select * from commodity where color = '{$condition}'";
@@ -108,6 +131,29 @@ class Commodity
         }else{
             echo '{"code":"0"}';
         }
+    }
+//价格排序
+
+//收藏页查询id信息
+    function sp_collect($uid,$gid){
+        //创建一个临时数据信息 存放用户id，商品id，数量信息
+        $sql = "insert into collect (uid,gid) values ('{$uid}','{$gid}')";
+        $res = $this->db->query($sql);
+        if ($res){
+            echo '{"code":"1"}';
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
+    function z_collect($gid){
+        $sql = "select *  from  commodity   where  id = '{$gid}'";
+        $res = $this->db->query($sql);
+        if($res){
+            echo json_encode($res);
+        }else{
+            echo '{"code":"0"}';
+        }
+
     }
 
     /*------------------------后台管理部分---------------------------------------*/

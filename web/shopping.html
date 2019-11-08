@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="swarovski.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+            font-family: 微软雅黑;
+            outline: none;
+        }
+        .title1,.title2{
+            text-align: center;
+            size: 16px;
+        }
+        .title2{
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #555555;
+        }
+        .wrap{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .wrap_left,.wrap_right{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .wrap_left{
+            width: 60%;
+        }
+        .wrap_right{
+            width: 35%;
+        }
+        .chenk{
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            vert-align: middle;
+        }
+        .box{
+            width: 100%;
+            height: 250px;
+        }
+        .box_left,.box_right{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .box_left{
+            width: 30%;
+            height: 190px;
+        }
+        .box_left img{
+            width: 100%;
+
+        }
+       .commd{
+           display: flex;
+           justify-content: space-between;
+           color: #000;
+       }
+       .box_right{
+           margin-left: 20px;
+       }
+       .sernumber{
+           color: #636363;
+           font-size: 14px;
+       }
+        .part,.prices{
+            display: inline-block;
+
+        }
+        .price{
+            margin-top: 20px;
+            color: #636363;
+            font-size: 16px;
+        }
+        .box_right{
+            width: 60%;
+            height: 190px;
+        }
+        .operation{
+            display: flex;
+            justify-content: space-between;
+            height: 55px;
+            margin-top: 20px;
+        }
+        .ope_left,.open_right{
+            display: inline-block;
+            width: 40%;
+            height: 55px;
+            font-size: 0px;
+        }
+        .ope_left{
+            background-color: #f6f6f6;
+            border: 1px solid #b8b7b6;
+            font-size: 20px;
+        }
+        .open_right{
+            line-height: 75px;
+        }
+        .ope_left input{
+            background: #f6f6f6;
+            border: 1px solid #b8b7b6;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .ope_left .add,.ope_left .des{
+            width: 20%;
+            height: 53px;
+          }
+        .ope_left .val{
+            width: 40%;
+            height: 53px;
+
+        }
+        .open_right .love ,.open_right .del {
+            display: inline-block;
+            width: 37px;
+            height: 37px;
+            font-size: 14px;
+        }
+        .open_right img{
+            width: 30px;
+            cursor: pointer;
+        }
+        .wrap_right{
+            background-color: #f6f6f6;
+            padding: 20px;
+            width: 26%;
+            margin-left: 20px;
+        }
+        .right_box{
+            margin-bottom: 20px;
+            letter-spacing: .06em;
+        }
+        .right_box .r_box1{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .right_box .r_box2{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .right_box .r_box3{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .right_box .r_box4{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .right_box .r_box5{
+              display: flex;
+              justify-content: space-between;
+              margin-top: 10px;
+          }
+        .box5_l{
+            font-size: 18px;
+        }
+        .box5_r{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .r_box6{
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            background-color: #231161;
+            color: #fff;
+            margin: 20px 0px;
+        }
+        .r_box7{
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .r_box1{
+            font-size: 18px;
+        }
+        .box_xj{
+            font-weight: bold;
+        }
+        .right_box>.r_box3{
+            display: block;
+        }
+        .box1_r{
+            font-weight: bold;
+            border: none;
+            width: 50px;
+            background: #f6f6f6;
+        }
+        .right_box>div{
+            margin-top: 20px;
+        }
+        .total{
+            border: none;
+            background:#f6f6f6;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="nav"></div>
+<div class="title1">主页/您的购物袋</div>
+<div class="title2">您的购物袋</div>
+
+<div class="wrap">
+    <div class="chenk">
+        <input type="checkbox" id="checkAll">
+        <div>商品详情</div>
+        <div>结算信息</div>
+    </div>
+    <div class="wrap_left">
+        <div class="shoppings">
+
+
+        </div>
+    </div>
+    <div class="wrap_right">
+        <div class="right_box">
+            <div class="r_box1">
+                <span>小计</span>
+                <span class="box_xj">￥<input type="text" class="box1_r" value="0"></span>
+            </div>
+            <div>
+                <div class="r_box2">
+                    <span>免费礼品袋</span>
+                    <span>否</span>
+                </div>
+                <div class="r_box3">
+                    <span>免费贺卡</span>
+                    <span>否</span>
+                </div>
+                <div class="r_box4">
+                    <span>配送</span>
+                    <span>免费:</span>
+                </div>
+            </div>
+        </div>
+        <div class="right_box">
+            <div class="r_box5" >
+                <span class="box5_l">总计：</span>
+                <span class="box5_r">￥<input type="text" class="total" value="0"></span>
+            </div>
+            <div class="r_box6" onclick="order(this)">
+                结账
+            </div>
+            <div class="r_box7">尊享购物服务</div>
+        </div>
+        <div class="right_box">
+            <div>标准快递免运费！只需购物满人民币 CNY 900</div>
+            <div>指定配送日期</div>
+            <div>免费礼品卡及礼品袋</div>
+        </div>
+    </div>
+</div>
+<div class="foot"></div>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./layui/layui.all.js"></script>
+<script src="index.js"></script>
+<script>
+
+//全选
+
+$("#checkAll").click(function() {
+    if ($(this).is(":checked")) { //如果全选按钮被选中
+        $(".inp1").prop('checked', true); //所有按钮都被选中
+        $('.inp1').addClass('newinp');
+        let ms =  $('.inp1');//如果勾选上了就加了类名，结算时用
+
+        for (let i = 0; i < ms.length;i++){
+             let sm =  ms.eq(i).parent().children().eq(2).children().eq(0).children().eq(1).children().text();
+
+           let zzj = $('.box1_r').val();
+           zzj = Number(zzj);
+            zzj += Number(sm);
+            $('.box1_r').val(Number(zzj));
+            $('.total').val(zzj);
+        }
+    } else {
+        $(".inp1").prop('checked', false); //else所有按钮不全选
+        $('.box1_r').val(0);
+        $('.total').val(0);
+        $('.inp1').removeClass('newinp');//如果取消勾选上了就加删了类名，结算时用
+    }
+
+});
+//单选
+
+//增加
+function add(btn) {
+    //获取数量
+    let num = $(btn).prev().val();
+    num++;
+    $(btn).prev().val(num);
+    //获取单价
+    let price = $(btn).parent().parent().parent().children().eq(1).children().text();
+    //总价
+    let prices = $(btn).parent().parent().parent().children().eq(0).children().eq(1).children();
+    prices.text(price*num);
+    let xj = $('.box1_r').val();
+    //判断是否勾选了
+    let che = $(btn).parent().parent().parent().parent().children().eq(0);
+    if (che.is(":checked")){
+        $('.box1_r').val(Number(xj) + Number(price))//小计
+        $('.total').val(Number(xj) + Number(price))//总计
+    }else {
+        $('.box1_r').val(Number(xj));//小计
+        $('.total').val(Number(xj))//总计
+    }
+
+
+}
+//减少
+function minsu(btn) {
+    let num = $(btn).next().val();
+    num--;
+    let price = $(btn).parent().parent().parent().children().eq(1).children().text();
+    //总价
+    let prices = $(btn).parent().parent().parent().children().eq(0).children().eq(1).children();
+    prices.text(price*num);
+    $(btn).next().val(num);
+    if (num <= 0){
+        $(btn).next().val(1);
+        $(btn).parent().parent().parent().children().eq(1).children().text(price)
+
+    }
+    //获取单价
+    //小计 总计
+    let xj = $('.box1_r').val();
+    //判断是否勾选了
+    let che = $(btn).parent().parent().parent().parent().children().eq(0);
+    if (che.is(":checked")){
+        if (num > 0){
+            $('.box1_r').val(Number(xj) - Number(price))//小计
+            $('.total').val(Number(xj) - Number(price))//总计
+        }
+    }else {
+        $('.box1_r').val(Number(xj));//小计
+        $('.total').val(Number(xj))//总计
+    }
+}
+//总价格
+function f() {
+    $('.price_a').text();
+}
+//小计  勾选事件
+function subtotal(btn) {
+    if ($(btn).is(":checked")){//如果被旋转
+        $(btn).addClass('newinp');//勾选了加类名
+         let price = $(btn).parent().children().eq(2).children().eq(0).children().eq(1).children().text();
+        let xj = $('.box1_r').val() ;
+        xj = Number(xj);
+        // console.log(typeof (zj));
+        xj += Number(price)
+        $('.box1_r').val(xj)
+        $('.total').val(xj);
+
+    }else {
+        $(btn).removeClass('newinp');
+        let price = $(btn).parent().children().eq(2).children().eq(0).children().eq(1).children().text();
+        let xj = $('.box1_r').val() ;
+        xj -= Number(price);
+        $('.box1_r').val(xj)
+        $('.total').val(xj);
+    }
+}
+
+//数据库部分
+function select() {
+    let gsid;
+    let ucolor;//用户选定的颜色
+    let utrue;//用户选定的材质
+    let ucount;//用户选定的数量
+    //通过uid查信息
+        $.ajax({
+            type:'post',
+            url:' http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+            data:{
+                type: 'sp_select',
+                uid:2,
+            },
+            success(res) {
+                const obj = JSON.parse(res);
+                console.log(obj);
+                for (let item of obj){
+                    gsid = item.gid;
+                    ucolor = item.color;
+                    utrue = item.texttrue;
+                    ucount = item.count;
+                    console.log(gsid)
+                    //查商品信息
+                    $.ajax({
+                        type:'post',
+                        url:' http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+                        data:{
+                            type: 'sp_increase',
+                            gid:gsid,
+                        },
+                        success(res){
+                            const obj = JSON.parse(res);
+                            for (let item of obj ){
+                                let tr = $(`
+                                 <div class="box">
+                                <input type="checkbox" class="inp1" name="newcheck" data-id="${item.id}" onclick="subtotal(this)">
+                                <div class="box_left"><img src="${item.img}"></div>
+                                <div class="box_right">
+                                    <div class="commd">
+                                        <div class="part"><span>首饰</span>，<span>${item.goodname}</span>，<span>${ucolor}</span>，<span>${utrue}</span></div>
+                                        <div class="prices">￥<span class="price_a">${item.price}</span></div>
+                                    </div>
+                                    <div class="price">产品价格:￥<span>${item.price}</span></div>
+                                    <div class="sernumber">产品编号:${item.Serialnumber}</div>
+                                    <div class="operation">
+                                        <div class="ope_left">
+                                        <input type="text" value="-" class="add" onclick="minsu(this)">
+                                        <input type="text" value="1" class="val">
+                                        <input type="text" value="＋" class="des" onclick="add(this)">
+                                        </div>
+                                        <div class="open_right">
+                                            <div onclick="love(this)" class="love"><img src="http://localhost/XAH190603/CXK/resource/images/shopping/sc2.png"></div>
+                                            <div onclick="delete(this)" class="del"><img src="http://localhost/XAH190603/CXK/resource/images/shopping/del.png"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                `);
+                                $('.shoppings').append(tr);
+                            }
+                        }
+                    });
+                };
+
+
+            }
+        })
+}
+select();
+
+//订单创建
+function order(btn) {
+        const od = $('.newinp');
+        let merch = [];
+        for (let i = 0 ; i < od.length;i++){
+            const td = od.eq(i).parent();
+            const gid = od.eq(i).attr('data-id');
+            const name = td.children().eq(2).children().eq(0).children().eq(0).children().eq(1).text();
+            const color = td.children().eq(2).children().eq(0).children().eq(0).children().eq(2).text();
+            const ttrue = td.children().eq(2).children().eq(0).children().eq(0).children().eq(3).text();
+            console.log(gid,name,color,ttrue)
+            merch.push(gid,name,color,ttrue,'|');
+            // window.location.href = "login.html"; //页面跳转
+    }
+    console.log(merch)
+    const  max = merch.join(',');
+    console.log(max);
+    //发送ajax请求
+    $.ajax({
+        type:'post',
+        url:' http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+        data:{
+            type:'sp_account',
+            uid:2,
+            gid:max,
+            count:3,
+
+        },
+        success(res){
+            console.log(res);
+        }
+    })
+
+        if ($(od).is(":checked")) {//如果被旋转
+
+        }
+
+
+}
+
+</script>
+</body>
+</html>

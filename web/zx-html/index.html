@@ -1,11 +1,11 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html	>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>购物车</title>
-
 <link href="../../css/zx-css/index.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
 
 <script type="text/javascript" src="../../js/zx-js/jquery.1.4.2-min.js"></script>
 <script type="text/javascript" src="../../js/zx-js/Calculation.js"></script>
@@ -97,9 +97,9 @@ function GetCount() {
 }
 </script>
 
+=======
+>>>>>>> 62113eb59c7674fbd4754d58a15a0539454c1091
 </head>
-
-
 
 <body>
 	<div class="wrap">
@@ -118,6 +118,7 @@ function GetCount() {
 
 			<div class="zuizuo">
 				<!---商品加减算总数---->
+<<<<<<< HEAD
 				<script type="text/javascript">
 					$(function () {
 						var t = $("#text_box1");
@@ -160,75 +161,61 @@ function GetCount() {
 						<div class="tb1_td7"><a href="#">删除</a></div>
 					</div>
 				</div>
+=======
+
+				<!--<div cellpadding="0" cellspacing="0" class="gwc_tb2" id="gwc_tb_top">-->
+					<!--<div class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></div>-->
+					<!--<div class="tb2_td2"><a href="#"><img src="../../resource/images/shopping/img.jpg"/></a></div>-->
+					<!--<div class="gwc_tb2_left">-->
+						<!--<div class="tb2_td3">-->
+							<!--<a href="#">LOUISON 开口戒指, 白色, 镀铑</a>-->
+							<!--<div class="tb1_td6">￥&nbsp<label id="total1" class="tot"></label></div>-->
+							<!--<div class="tb-par">-->
+								<!--颜色:  白色, 镀白金色 <br>-->
+								<!--尺寸:  58 <br>-->
+								<!--产品编号: 5448874-->
+							<!--</div>-->
+						<!--</div>-->
+
+						<!--<div class="tb1_td5">-->
+							<!--<input id="min1" name="" type="button" value="－"  />-->
+							<!--<input id="text_box1" name="" type="text" value="1" readonly="true"/>-->
+							<!--<input id="add1" name="" type="button" value="＋" />-->
+						<!--</div>-->
+						<!--<div class="tb1_td7"><a href="#">删除</a></div>-->
+					<!--</div>-->
+				<!--</div>-->
+>>>>>>> 62113eb59c7674fbd4754d58a15a0539454c1091
 
 				<!---商品加减算总数---->
-				<script type="text/javascript">
-					$(function () {
-						var t = $("#text_box2");
-						$("#add2").click(function () {
-							t.val(parseInt(t.val()) + 1)
-							setTotal(); GetCount();
-						})
-						$("#min2").click(function () {
-							if(t.val()>0){
-								t.val(parseInt(t.val()) - 1)
-								setTotal(); GetCount();
-							}
-						})
-						function setTotal() {
 
-							$("#total2").html((parseInt(t.val()) * 8).toFixed(2));
-							$("#newslist-2").val(parseInt(t.val()) * 8);
-						}
-						setTotal();
-					})
-				</script>
-				<div cellpadding="0" cellspacing="0" class="gwc_tb2">
-					<div class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-2" /></div>
-					<div class="tb2_td2"><a href="#"><img src="../../resource/images/shopping/img.jpg"/></a></div>
-					<div class="gwc_tb2_left">
-						<div class="tb2_td3">
-							<a href="#">LOUISON 开口戒指, 白色, 镀铑</a>
-							<div class="tb1_td6">￥&nbsp<label id="total2" class="tot"></label></div>
-							<div class="tb-par">
-								颜色:  白色, 镀白金色 <br>
-								尺寸:  58 <br>
-								产品编号: 5448874
-							</div>
-						</div>
+				<!--<div cellpadding="0" cellspacing="0" class="gwc_tb2">-->
+					<!--<div class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-2" /></div>-->
+					<!--<div class="tb2_td2"><a href="#"><img src="../../resource/images/shopping/img.jpg"/></a></div>-->
+					<!--<div class="gwc_tb2_left">-->
+						<!--<div class="tb2_td3">-->
+							<!--<a href="#">LOUISON 开口戒指, 白色, 镀铑</a>-->
+							<!--<div class="tb1_td6">￥&nbsp<label id="total2" class="tot"></label></div>-->
+							<!--<div class="tb-par">-->
+								<!--颜色:  白色, 镀白金色 <br>-->
+								<!--尺寸:  58 <br>-->
+								<!--产品编号: 5448874-->
+							<!--</div>-->
+						<!--</div>-->
 
-						<div class="tb1_td5">
-							<input id="min2" name="" type="button" value="－" />
-							<input id="text_box2" name="" type="text" value="1" readonly="true"/>
-							<input id="add2" name="" type="button" value="＋" />
-						</div>
-						<div class="tb1_td7"><a href="#">删除</a></div>
-					</div>
-				</div>
+						<!--<div class="tb1_td5">-->
+							<!--<input id="min2" name="" type="button" value="－" />-->
+							<!--<input id="text_box2" name="" type="text" value="1" readonly="true"/>-->
+							<!--<input id="add2" name="" type="button" value="＋" />-->
+						<!--</div>-->
+						<!--<div class="tb1_td7"><a href="#">删除</a></div>-->
+					<!--</div>-->
+				<!--</div>-->
 			</div>
 
 
 			<!---总数---->
-			<script type="text/javascript">
-				$(function () {
-					$(".quanxun").click(function () {
-						setTotal();
-						//alert($(lens[0]).text());
-					});
-					function setTotal() {
-						var len = $(".tot");
-						var num = 0;
-						for (var i = 0; i < len.length; i++) {
-							num = parseInt(num) + parseInt($(len[i]).text());
 
-						}
-						//alert(len.length);
-						$("#zong1").text(parseInt(num).toFixed(2));
-						$("#shuliang").text(len.length);
-					}
-					//setTotal();
-				})
-			</script>
 			<div class="gwc_tb3">
 				<div class="right-top">
 					<div class="tb3_td2">已选商品 <label id="shuliang" style="color:#ff5500;font-size:14px; font-weight:bold;">0</label> 件</div>
@@ -244,5 +231,215 @@ function GetCount() {
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="../../js/zx-js/jquery.1.4.2-min.js"></script>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/zx-js/Calculation.js"></script>
+	<script type="text/javascript">
+
+		//数据库的操作
+		function sp_select() {
+			$.ajax({
+				type:'post',
+				url:'http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+				data:{
+					type:'sp_select',
+					uid:2,
+				},
+				success(res){
+					const obj = JSON.parse(res);
+					console.log(obj);
+					for (let item of obj){
+						let gid = item.gid;
+						$.ajax({
+							type:'post',
+							url:'http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+							data:{
+								type:'pc_select',
+								gid:gid,
+							},
+							success(res){
+								const obj = JSON.parse(res);
+								console.log(obj)
+								for (let item of obj){
+									const tr = $(`	<div cellpadding="0" cellspacing="0" class="gwc_tb2" id="gwc_tb_top">
+										<div class="tb2_td1"><input type="checkbox" value="1" name="newslist" id="newslist-1" /></div>
+										<div class="tb2_td2"><a href="#"><img src="${item.img}"/></a></div>
+										<div class="gwc_tb2_left">
+											<div class="tb2_td3">
+												<a href="#">LOUISON ${item.goodname}, ${item.color}, ${item.texttrue}</a>
+												<div class="tb1_td6">￥&nbsp<label id="total1" class="tot"></label></div>
+												<div class="tb-par">
+													颜色:   ${item.color}, ${item.texttrue} <br>
+													尺寸:  ${item.size} <br>
+													产品编号: ${item.Serialnumber}
+												</div>
+											</div>
+
+											<div class="tb1_td5">
+												<input id="min1" name="" type="button" value="－"  />
+												<input id="text_box1" name="" type="text" value="1" readonly="true"/>
+												<input id="add1" name="" type="button" value="＋" />
+											</div>
+											<div class="tb1_td7"><a href="#">删除</a></div>
+										</div>
+									</div>	<div></div>
+									`);
+									$('.zuizuo').append(tr);
+								}
+							}
+						});
+					}
+
+				}
+			})
+		}
+		sp_select();
+
+		$(document).ready(function () {
+
+			//jquery特效制作复选框全选反选取消(无插件)
+			// 全选
+			$(".allselect").click(function () {
+				if($(this).attr("checked")){
+					$(".gwc_tb2 input[name=newslist]").each(function () {
+						$(this).attr("checked", true);
+						// $(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+					});
+					GetCount();
+				}
+				else
+				{
+					$(".gwc_tb2 input[name=newslist]").each(function () {
+						if ($(this).attr("checked")) {
+							$(this).attr("checked", false);
+							//$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+						} else {
+							$(this).attr("checked", true);
+							//$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+						}
+					});
+					GetCount();
+				}
+			});
+
+			//反选
+			$("#invert").click(function () {
+				$(".gwc_tb2 input[name=newslist]").each(function () {
+					if ($(this).attr("checked")) {
+						$(this).attr("checked", false);
+						//$(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+					} else {
+						$(this).attr("checked", true);
+						//$(this).next().css({ "background-color": "#3366cc", "color": "#000000" });
+					}
+				});
+				GetCount();
+			});
+
+			//取消
+			$("#cancel").click(function () {
+				$(".gwc_tb2 input[name=newslist]").each(function () {
+					$(this).attr("checked", false);
+					// $(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+				});
+				GetCount();
+			});
+
+			// 所有复选(:checkbox)框点击事件
+			$(".gwc_tb2 input[name=newslist]").click(function () {
+				if ($(this).attr("checked")) {
+					// $(this).next().css({ "background-color": "#3366cc", "color": "#ffffff" });
+				} else {
+					// $(this).next().css({ "background-color": "#ffffff", "color": "#000000" });
+				}
+			});
+
+			// 输出
+			$(".gwc_tb2 input[name=newslist]").click(function () {
+				// $("#total2").html() = GetCount($(this));
+				GetCount();
+				//alert(conts);
+			});
+		});
+		//******************
+		function GetCount() {
+			var conts = 0;
+			var aa = 0;
+			$(".gwc_tb2 input[name=newslist]").each(function () {
+				if ($(this).attr("checked")) {
+					for (var i = 0; i < $(this).length; i++) {
+						conts += parseInt($(this).val());
+						aa += 1;
+					}
+				}
+			});
+			$("#shuliang").text(aa);
+			$("#zong1").html((conts).toFixed(2));
+			$("#jz1").css("display", "none");
+			$("#jz2").css("display", "block");
+		}
+
+		$(function () {
+			var t = $("#text_box1");
+			$("#add1").click(function () {
+				t.val(parseInt(t.val()) + 1)
+				setTotal(); GetCount();
+			})
+			$("#min1").click(function () {
+				if(t.val()>0){
+					t.val(parseInt(t.val()) - 1)
+					setTotal(); GetCount();
+				}
+			})
+			function setTotal() {
+				$("#total1").html((parseInt(t.val()) * 9).toFixed(2));
+				$("#newslist-1").val(parseInt(t.val()) * 9);
+			}
+			setTotal();
+		})
+
+		$(function () {
+			var t = $("#text_box2");
+			$("#add2").click(function () {
+				t.val(parseInt(t.val()) + 1)
+				setTotal(); GetCount();
+			})
+			$("#min2").click(function () {
+				if(t.val()>0){
+					t.val(parseInt(t.val()) - 1)
+					setTotal(); GetCount();
+				}
+			})
+			function setTotal() {
+
+				$("#total2").html((parseInt(t.val()) * 8).toFixed(2));
+				$("#newslist-2").val(parseInt(t.val()) * 8);
+			}
+			setTotal();
+		});
+
+		$(function () {
+			$(".quanxun").click(function () {
+				setTotal();
+				//alert($(lens[0]).text());
+			});
+			function setTotal() {
+				var len = $(".tot");
+				var num = 0;
+				for (var i = 0; i < len.length; i++) {
+					num = parseInt(num) + parseInt($(len[i]).text());
+
+				}
+				//alert(len.length);
+				$("#zong1").text(parseInt(num).toFixed(2));
+				$("#shuliang").text(len.length);
+			}
+			//setTotal();
+		})
+
+
+	</script>
+
 </body>
 </html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="../plug/layui/css/layui.css" >
+    <link rel="stylesheet" href="swarovski.css">
+    <link rel="stylesheet" href="../css/goods.css">
+
+
+</head>
+<body style = 'overflow: auto !important;'>
+<div class="nav"></div>
+
+    <div class="content">
+        <div class="item">
+           <span>< 返回</span>
+           <div class="tit">
+               <span>主页 /</span>
+               <span>首饰</span>
+           </div>
+       </div>
+        <div class="title">水晶首饰</div>
+        <div class="add">
+            <div class="left">
+                <div class="l-add">
+                    <div class="your-chose">你的选择</div>
+                    <div class="orna">首饰</div>
+                    <div class="y-add">
+                    </div>
+                </div>
+                <div class="st">
+                    筛选条件
+                </div>
+
+                <div>
+                    <div class="kind1 kind2">
+                        <span class="kind">类别</span>
+                        <span class="k1">-</span>
+                    </div>
+                    <div class="kind-add kinds kinds1">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="kind1 kind2 ">
+                        <span class="kind">颜色</span>
+                        <span class="k1">-</span>
+                    </div>
+                    <div class="kind-add kinds shan color">
+
+                    </div>
+                </div>
+                <div>
+                <div class="kind1 kind2 ">
+                    <span class="kind">材料</span>
+                    <span class="k1">-</span>
+                </div>
+                <div class="kind-add kinds shan text">
+
+                </div>
+            </div>
+                <div>
+                    <div class="kind1 kind2 ">
+                        <span class="kind">尺寸</span>
+                        <span class="k1">-</span>
+                    </div>
+                    <div class="kind-add kinds shan size">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="kind1 kind2 ">
+                        <span class="kind">主题</span>
+                        <span class="k1">-</span>
+                    </div>
+                    <div class="kind-add kinds shan theme">
+
+                    </div>
+                </div>
+                <div>
+                    <div class="kind1 kind2">
+                        <span class="kind">价格</span>
+                        <span class="k1">-</span>
+                    </div>
+                    <div class="kind-add kinds">
+                        <div id="slideTest9" class="demo-slider"></div>
+                        <div id="test-slider-tips2" style="position:relative; left: 30px; margin-top: -10px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="up">
+                    <span>
+                      找到 <span class="nums"></span> 产品
+                   </span>
+                    <span>
+                        分类条件:
+                    </span>
+                    <span class="p-chose">
+                       <select name="" id="s1">
+     				         <option value="价格由高到低">价格由高到低</option>
+     				         <option value="价格由低到高">价格由低到高</option>
+     			      </select>
+                    </span>
+                </div>
+                <div class="list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot"></div>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="./layui/layui.all.js"></script>
+<script src="index.js"></script>
+
+<script src="../plug/layui/layui.js" charset="utf-8"></script>
+<script src="../js/goods.js"></script>
+<!--<script src="../js/goods1.js"></script>-->
+<script>
+    layui.use(['carousel', 'form'], function () {
+        var carousel = layui.carousel
+            , form = layui.form;
+
+        //常规轮播
+        carousel.render({
+            elem: '#test1'
+            , arrow: 'always'
+        });
+
+        //改变下时间间隔、动画类型、高度
+        carousel.render({
+            elem: '#test2'
+            , interval: 1800
+            , anim: 'fade'
+            , height: '225px'
+        });
+
+        //设定各种参数
+        var ins3 = carousel.render({
+            elem: '#test3'
+        });
+        //图片轮播
+        carousel.render({
+            elem: '#test10'
+            , width: '225px'
+            , height: '225px'
+            , interval: 5000
+        });
+
+        //事件
+        carousel.on('change(test4)', function (res) {
+            console.log(res)
+        });
+
+        var $ = layui.$, active = {
+            set: function (othis) {
+                var THIS = 'layui-bg-normal'
+                    , key = othis.data('key')
+                    , options = {};
+
+                othis.css('background-color', '#5FB878').siblings().removeAttr('style');
+                options[key] = othis.data('value');
+                ins3.reload(options);
+            }
+        };
+
+        //监听开关
+        form.on('switch(autoplay)', function () {
+            ins3.reload({
+                autoplay: this.checked
+            });
+        });
+
+        $('.demoSet').on('keyup', function () {
+            var value = this.value
+                , options = {};
+            if (!/^\d+$/.test(value)) return;
+
+            options[this.name] = value;
+            ins3.reload(options);
+        });
+
+        //其它示例
+        $('.demoTest .layui-btn').on('click', function () {
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+    });
+    window.onscroll = function () {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop > 200) {
+                $('.header-b').css({
+                    position: 'fixed',
+                    left: '0',
+                    top: '0',
+                    background: '#fff',
+                    transition: '.5s',
+                    zIndex: '10000'
+                }),
+                    $('.yt').css({
+                        display: 'block'
+                    }),
+                    $('.dz').css({
+                        display: 'block'
+                    }),
+                    $('.dlzc').css({
+                        display: 'block'
+                    })
+            }
+            if (scrollTop < 200) {
+                $('.header-b').css({
+                    position: 'relative',
+                    transition: '.5s'
+                }),
+                    $('.yt').css({
+                        display: 'none'
+                    }),
+                    $('.dz').css({
+                        display: 'none'
+                    }),
+                    $('.dlzc').css({
+                        display: 'none'
+                    })
+            }
+        }
+</script>
+</body>
+</html>
+
