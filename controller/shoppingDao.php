@@ -17,6 +17,10 @@ switch ($type){
     case 'select';
         $commodity->select();
         break;
+    case 'dim':
+        $js = $_POST['js'];
+        $commodity->dim($js);
+        break;
     //筛选
     case 'Filtrate':
         $condition = $_POST['condition'];
@@ -41,9 +45,14 @@ switch ($type){
         $theme = $_POST['theme'];
         $commodity->add_shopping($uid,$gid,$count,$true,$color,$size,$theme);
         break;
-    case 'dim':
-        $js = $_POST[js];
-        $commodity->dim($js);
+     //加入收藏
+    case 'add_collects':
+        $uid = $_POST['uid'];
+        $gid = $_POST['gid'];
+        $commodity->add_collects($uid,$gid);
+        break;
+
+
                    /*---------------------登录注册部分-----------------------*/
 
     /*---------------------购物车部分-----------------------*/
@@ -72,6 +81,13 @@ switch ($type){
         $gid = $_POST['gid'];
         $count = $_POST['count'];
         $commodity->sp_generate($gid,$count);
+        break;
+    case 'select_order':
+        $commodity->select_order();
+        break;
+    case 'select_seit':
+        $uid = $_POST['uid'];
+        $commodity->select_seit($uid);
         break;
     case 'order_cj';//订单生产
         $uid = $_POST['uid'];

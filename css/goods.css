@@ -32,13 +32,13 @@
 .add  div,.add span,select{
     font-size: 20px;
 }
-.left{
+.add .left{
     width: 22%;
     display: inline-block;
     font-size: 16px;
 }
-.right{
-    width: 78%;
+.add .right{
+    width: 77%;
     display:inline-block;
     vertical-align: top;
 }
@@ -162,10 +162,11 @@ select{
 .list .goods{
     width: calc(100% / 3);
     height: 340px;
+    cursor: pointer;
 }
 .goods img{
     width:200px;
-    height: auto;
+    height: 200px;
     margin: 0 auto;
     display: block;
 }
@@ -189,6 +190,7 @@ select{
 .cuo{
     cursor: pointer;
 }
+
 .kinds .layui-slider-wrap-btn{
     width: 12px;
     background: black;

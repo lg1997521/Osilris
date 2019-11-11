@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>填写地址</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="layui.css">
+    <link rel="stylesheet" href="index-1.css">
+</head>
+<body>
+    <!-- 页头 -->
+
+    <!-- 订单信息 -->
+    <div class="neworder">
+        <div class="order">
+            <h2>填写核对订单信息</h2>
+            <p class="order-msg">收货人信息</p>
+            <div class="add_site">添加新的收货地址</div>
+            <!--新的添加购物地址-->
+            <div class="order-add">
+                <span class="order-dz">点击添加新地址</span>
+                <div class="order-per order-list">
+                    <mark>*</mark>
+                    <span>收&nbsp;货&nbsp;人&nbsp;：</span>
+                    <input type="text" class="order-inp">
+                </div>
+                <div class="order-num order-list login_num">
+                    <mark>*</mark>
+                    <span>手机号码：</span>
+                    <input type="text" class="order-inp login_p" maxlength="11">
+                    <p class="notice1"></p>
+                </div>
+                <div class="order-province order-list">
+                    <mark>*</mark>
+                    <span>省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</span>
+                    <select name="" class="order-prov order-box">
+                        <option value="">--请选择--</option>
+                        <option value="">北京</option>
+                        <option value="">天津</option>
+                        <option value="">陕西</option>
+                        <option value="">广西壮族自治区</option>
+                        <option value="">宁夏回族自治区</option>
+                    </select>
+                    <input type="text" class="order-inp order-dress">
+                </div>
+                <div class="order-province order-list">
+                    <mark>*</mark>
+                    <span>城&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;市：</span>
+                    <select name="" class="order-prov order-box">
+                        <option value="">--请选择--</option>
+                        <option value="">西安</option>
+                        <option value="">延安</option>
+                        <option value="">渭南</option>
+                        <option value="">安塞</option>
+                        <option value="">榆林</option>
+                    </select>
+                    <input type="text" class="order-inp order-dress">
+                </div>
+                <div class="order-address order-list">
+                    <mark>*</mark>
+                    <span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>
+                    <input type="text" class="order-inp">
+                </div>
+                <div class="order-code order-list">
+                    <mark>*</mark>
+                    <span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编：</span>
+                    <input type="text" class="order-inp order-postal" maxlength="6">
+                    <p>请您使用准确邮编以便于您准时收货。</p>
+                    <p class="notice4"></p>
+                </div>
+                <a href="../order-m/order-m.html"><button class="layui-btn order-btn1">保存</button></a>
+                <button class="layui-btn layui-btn-primary order-btn2">取消</button>
+            </div>
+            <div class="order-bt"></div>
+            <!--<div class="order-index">-->
+                <!--<div class="od1">姓名: <span></span></div>-->
+                <!--<div class="od2">电话:<span></span></div>-->
+                <!--<div class="od3">邮编:<span></span></div>-->
+                <!--<div class="od4">地址:</div>-->
+                <!--<div></div>-->
+            <!--</div>-->
+            <!--右边支付页-->
+            <div class="gwc_tb3">
+                <div class="right-top">
+                    <div class="tb3_td2">已选商品 <label id="shuliang" style="color:#ff5500;font-size:14px; font-weight:bold;">0</label> 件</div>
+                    <div class="tb3_td3">合计(不含运费):<span>￥</span><span style=" color:#ff5500;"><label id="zong1" style="color:#ff5500;font-size:14px; font-weight:bold;"></label></span></div>
+                    <div class="tb3_td4"><a href="#" class="jz2" id="jz2">结算</a></div>
+                </div>
+                <div class="right-top">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        //查看临时订单信息
+        function select_order() {
+            $.ajax({
+                type:'post',
+                url:'http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+                data:{
+                    type:'select_order',
+                },
+                success(res){
+                    let gi;//gid内的所有信息
+                    let goods;//分割转换成数组后的gid信息
+                    let tr;
+                    const obj = JSON.parse(res);
+                    let goods1;
+                    let uis;
+                    for (let item of obj){
+                        // for (let i = 0 ; i < obj.length; i++){
+                            gi = item.gid;
+                             goods = gi.split('|');
+                    }
+                    for (let i = 0; i < goods.length; i++) {
+                        goods1 = goods[i];
+                        uis = goods1.split(',');
+                        tr = $(`
+                            <div class="sp_left"><img src="http://localhost/XAH190603/CXK/resource/images/commodity/bg1.jpg"></div>
+                                <div class="sp_right">
+                                      <div>LIFELONG BOW</div>
+                                                    <div class="part"><span>${uis[1]}</span>,<span>${uis[2]}</span><span>${uis[3]}</span></div>
+                                                    <div class="shuxing">
+                                                    <div>￥<span class="price"></span></div>
+                                                    <div>数量:<span>33</span></div>
+                                                    <div>产品价格:￥ <span></span></div>
+                                                    <div>产品编号: <span></span></div>
+                                    </div>
+
+                            `);
+                        $('.right-top').append(tr);
+                    }
+                }
+            });
+        }
+
+        select_order();
+        $('.add_site').click(function () {
+            $('.order-add').fadeIn();
+            $('.order-add').css('display','inline-block');
+        })
+        $('.order-btn1').click(function () {
+            $('.order-add').fadeOut();
+        })
+        $('.order-btn2').click(function () {
+            $('.order-add').fadeOut();
+        })
+
+        //地址获取
+        
+        function select_seit() {
+            $.ajax({
+                type:'post',
+                url:'http://localhost/XAH190603/CXK/controller/shoppingDao.php',
+                data:{
+                    type:'select_seit',
+                    uid:2,
+                },
+                success(res) {
+                    console.log(res);
+                    const obj = JSON.parse(res);
+                    for (let item of obj){
+                        let tr = $(`
+                     <div class="order-index">
+                        <div class="od1">姓名: <span>${item.name}</span></div>
+                        <div class="od2">电话:<span>${item.tel}</span></div>
+                        <div class="od3">邮编:<span>${item.postal}</span></div>
+                        <div class="od4">地址: <span>${item.site}</span></div>
+                        <div></div>
+                    </div>
+                    `);
+                        $('.order-bt').append(tr);
+                    }
+                }
+            })
+        }
+        select_seit()
+    </script>
+
+
+</body>
+</html>

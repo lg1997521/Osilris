@@ -281,7 +281,6 @@ $("#checkAll").click(function() {
         $(".inp1").prop('checked', true); //所有按钮都被选中
         $('.inp1').addClass('newinp');
         let ms =  $('.inp1');//如果勾选上了就加了类名，结算时用
-
         for (let i = 0; i < ms.length;i++){
              let sm =  ms.eq(i).parent().children().eq(2).children().eq(0).children().eq(1).children().text();
 
@@ -395,6 +394,7 @@ function select() {
                 uid:2,
             },
             success(res) {
+
                 const obj = JSON.parse(res);
                 console.log(obj);
                 for (let item of obj){

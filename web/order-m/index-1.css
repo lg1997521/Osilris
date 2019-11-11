@@ -1,0 +1,107 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+}
+html{
+ font-size:  calc(10000vw / 1300);   
+}
+.index-head-footer ul li a{
+    color:#aaa;
+}
+.index-head-footer{
+    width:100vw;
+    height:2.7rem;
+    background: #414141;
+    padding:.20rem 0;
+    /* margin-top: .5rem; */
+    padding-top:.5rem;
+    position: relative;
+}
+.index-head-footer ul{
+    position: absolute;
+    width:.70rem;
+    font-size: .14rem;
+}
+.index-head-footer>ul:nth-child(1){
+    left:1rem;
+}
+.index-head-footer>ul:nth-child(2){
+    left:2.7rem;
+}
+.index-head-footer>ul:nth-child(3){
+    left:4.7rem;
+}
+.index-head-footer>ul:nth-child(4){
+    left:6.7rem;
+}
+.index-head-footer>ul:nth-child(5){
+    left:8.7rem;
+}
+.index-head-footer ul p{
+    color:#fff;
+    margin-top:.30rem;
+    margin-bottom:.20rem;
+}
+.index-head-footer ul li{
+    margin-bottom:.15rem;
+}
+.index-head-footer1{
+    width: 2.35rem;
+    height:1rem;
+    position: absolute;
+    left:10rem;
+    top:.50rem;
+}
+.index-head-footer1>img{
+    width:1rem;
+    height:1rem;
+}
+.index-head-footer1>div{
+    width:1.08rem;
+    font-size: .12rem;
+    color: #bbb;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.index-head-footer1>div:nth-child(2){
+    left:1.2rem;
+    top:.05rem;
+}
+.index-head-footer1>div:nth-child(3){
+    left: 1.2rem;
+    top:.30rem;
+}
+.index-head-footer1>div:nth-child(4){
+    left:1.20rem;
+    top:.50rem;
+    font-size: .17rem;
+}
+.index-head-footer2{
+    width: 2.70rem;
+    position: absolute;
+    left:9.5rem;
+    bottom:.20rem;
+    font-size: .12rem;
+    color:#bbb;
+    text-align: right;
+}
+.index-head-footer2>div:nth-child(1),.index-head-footer2>div:nth-child(3){
+    width:.15rem;
+    height:.15rem;
+    background: url(../../sourse/img/footer1.png) no-repeat;
+    background-size: 110%;
+    display: inline-block;
+    margin-left:.10rem;
+}
+.index-head-footer2>div:nth-child(2),.index-head-footer2>div:nth-child(4){
+    display: inline-block;
+}
+.index-head-footer2>div:nth-child(2){
+    margin-right: .20rem;
+}
+.index-head-footer2>div:nth-child(5){
+    width:2.74rem 
+}
