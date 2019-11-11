@@ -1,3 +1,4 @@
+// delete require.cache[module.filename];
 var kinds = document.querySelectorAll(' .kind1');
 var kinds1 = document.querySelectorAll('.kind-add');
 let flag = true;
@@ -41,7 +42,7 @@ let  num;
         let as = [];
         for (let i = 0; i < spliceArr.length;i++){
             if(sh == spliceArr[i]){
-                num = i;
+                num = i + 1;
             }
         }
         $('input')[num].checked = false;
@@ -77,7 +78,7 @@ function  select() {
            const arr = JSON.parse(res);
            for(let i = 0; i < arr.length; i++){
                let el = $(`
-               <div class="goods">
+                     <div class="goods" data-id="${arr[i].id}" onclick="skip(this)">
                         <div>
                             <img src="${arr[i].img}" alt="">
                         </div>
@@ -92,7 +93,7 @@ function  select() {
                textArr.push(arr[i].texttrue);
                sizeArr.push(arr[i].size);
                themeArr.push(arr[i].theme);
-           }
+       }
            se();
            check = $('input[name=checkone]');
            tianjia();
@@ -212,12 +213,14 @@ function price() {
                     },
                     success(res) {
                         const  arr = JSON.parse(res);
+
                         $('.list').children().css({
                             display:'none'
                         });
                         for(let i = 0; i < arr.length; i++){
                             let el = $(`
-                            <div class="goods">
+                            <div class="goods" onclick="skip(this)" data-id="${arr[i].id}">
+                            
                         <div>
                             <img src="${arr[i].img}" alt="">
                         </div>
@@ -244,7 +247,7 @@ function price() {
                         });
                         for(let i = 0; i < arr.length; i++){
                             let el = $(`
-                            <div class="goods">
+                             <div class="goods" onclick="skip(this)" data-id="${arr[i].id}">
                         <div>
                             <img src="${arr[i].img}" alt="">
                         </div>
@@ -268,9 +271,9 @@ function shaixuan() {
        let content = $('.y-add').children()[i].children[0].innerHTML;
        addArr.push(content);
       }
-      console.log(addArr);
       //将数组转换成json格式的字符串，再发生到后台
-    let js = JSON.stringify(addArr);
+    // let js = JSON.stringify(addArr);
+    let js = addArr;
     console.log(js);
       $.ajax({
           type:'post',
@@ -280,8 +283,59 @@ function shaixuan() {
                js
           },
           success(res) {
-              console.log(res);
-          }
-      })
-}
+              if(js.length == 1){
+                  const  arr = JSON.parse(res);
+                  $('.list').children().css({
+                      display:'none'
+                  });
+                  for(let i = 0; i < arr.length; i++){
+                      let el = $(`
+                        <div class="goods" onclick="skip(this)" data-id="${arr[i].id}">
+                        <div>
+                            <img src="${arr[i].img}" alt="">
+                        </div>
+                        <div>${arr[i].theme}</div>
+                        <div>${arr[i].goodname},${arr[i].color},${arr[i].texttrue}</div>
+                        <div>￥${arr[i].price}</div>
+                         </div>
+                       `);
+                      $('.list').append(el);
+                  }
+              }
+              if(js.length == 0){
 
+
+                  console.log(11)
+                  $.ajax({
+                      type:'post',
+                      url:'../controller/shoppingDao.php',
+                      data:{
+                          type: 'select'
+                      },
+                      success(res){
+                          const arr = JSON.parse(res);
+                          for(let i = 0; i < arr.length; i++){
+                              let el = $(`
+                        <div class="goods" onclick="skip(this)" data-id="${arr[i].id}">
+                        <div>
+                            <img src="${arr[i].img}" alt="">
+                        </div>
+                        <div>${arr[i].theme}</div>
+                        <div>${arr[i].goodname},${arr[i].color},${arr[i].texttrue}</div>
+                        <div>￥${arr[i].price}</div>
+                    </div>
+            `);
+                              $('.list').append(el);
+
+                          }
+                      }
+                  })
+              }
+          }
+      });
+}
+//点击进入详情页面
+function  skip(btn) {
+    const data_id = $(btn).attr('data-id');
+    window.location.href = "http://localhost/XAH190603/CXK/web/detail.html? goods_id ="+data_id;
+};

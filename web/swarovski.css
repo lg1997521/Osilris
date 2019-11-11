@@ -350,22 +350,22 @@ ul{
     font-size:18px;
     background:#fff;
 }
-.list{
+.liist{
     font-size: 0;
     margin:0 auto;
     width: 80vw;
 }
-.list>div{
+.liist>div{
     width:19vw;
     height:15vw;
     display:inline-block;
     margin:1vw 1vw 2vw 0;
 }
-.list>div>img{
+.liist>div>img{
     width:19vw;
     height:210px;
 }
-.list>div>div{
+.liist>div>div{
     width:19vw;
     height: 60px;
     font-size:1vw;
@@ -568,19 +568,19 @@ width:14vw;
 .label-i{
     width: 1024px;
 }
-.list,.outer,.contact,.service>div,.story,.tail,.wb{
+.liist,.outer,.contact,.service>div,.story,.tail,.wb{
     width: 820px;
     margin:20px 100px;
 }
-.list>div{
+.liist>div{
     margin:16px 10px 32px 0;
     width: 195px;
     height: 80px;
 }
-.list>div>div{
+.liist>div>div{
     width: 195px;
 }
-.list>div>img{
+.liist>div>img{
     width:195px ;
 }
 .outer{

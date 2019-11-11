@@ -22,6 +22,24 @@ class Commodity
             echo '{"code":"0"}';
         }
     }
+     //模糊查询
+    function dim($js){
+//        var_dump($js);
+
+        $arr1 = ['color','size','theme','texttrue'];
+        for($i = 0; $i < count($js); $i++){
+//            var_dump($js[$i]);//
+            for($j = 0; $j < count($arr1); $j++) {
+                $sql = "select * from commodity where $arr1[$j] = '{$js[$i]}'";
+                $res = $this->db->query($sql);
+//                var_dump($res);
+                if ($res) {
+                    echo json_encode($res, true);
+                }
+            }
+        }
+    }
+    //按照价格排序
     function  prices(){
        $sql = "select * from commodity order by price DESC ";
        $res = $this->db->query($sql);
@@ -31,10 +49,6 @@ class Commodity
         echo '{"code":"0"}';
       }
    }
-   //模糊查询
-    function dim(){
-
-    }
     function  prices1(){
         $sql = "select * from commodity order by price asc ";
         $res = $this->db->query($sql);
@@ -47,7 +61,7 @@ class Commodity
     //
     //筛选
     function Filtrate($condition){
-        $sql = "select * from commodity where color = '{$condition}'";
+        $sql = "select * from commodity where color = '{$condition}' or texttrue = '${condition}'";
         $res = $this->db->query($sql);
         if ($res){
             echo json_encode($res);
@@ -70,6 +84,16 @@ class Commodity
     //加入购物车
     function add_shopping($uid,$gid,$count,$true,$color,$size,$theme){
         $sql = "insert into shopping (uid,gid,count,texttrue,color,size,theme) values ('{$uid}','{$gid}','{$count}','{$true}','{$color}','{$size}','{$theme}')";
+        $res = $this->db->query($sql);
+        if ($res){
+            echo '{"code":"1"}';
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
+    //加入收藏
+    function add_collects($uid,$gid){
+        $sql = "insert into collect (uid,gid) values ('{$uid}','{$gid}')";
         $res = $this->db->query($sql);
         if ($res){
             echo '{"code":"1"}';
