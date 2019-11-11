@@ -16,6 +16,12 @@ ul{
     display: inline-block;
     list-style: none;
 }
+.nav{
+    margin:40px 0;
+}
+.foot{
+    margin:40px 0;
+}
 .header{
     margin-top:37px;
     border-bottom: 1px solid #9999;
@@ -43,6 +49,7 @@ ul{
     font-size: 12px;
     vertical-align: middle;
 }
+
 .rigth-login:hover .enter {
     display: block;
 }
@@ -59,13 +66,13 @@ ul{
     font-size:30px;
     font-weight: bolder;
     text-align: center;
-    z-index:1111 ;
+    z-index:11111 ;
     left:-110px;
     display: none;
     top:32px;
     color:#444;
     height:280px;
-   border: 1px solid #999;
+    border: 1px solid #999;
 }
 
 .enter>div{
@@ -90,7 +97,7 @@ ul{
     padding:30px 0;
     vertical-align: top;
     width:362px;
-    height:200px;
+    height:185px;
     display:inline-block;
     font-size:20px;
 }
@@ -112,7 +119,7 @@ ul{
     height:210px;
    border: 1px solid #999;
    text-align: left;
-   z-index: 2;
+   z-index: 11111;
 }
 .enterr>div{
    padding:15px 0px 0 70px;
@@ -138,6 +145,9 @@ ul{
 .header-right>span,.rigth-aa>span{
     font-size:14px;
     color:#666;
+}
+.rigth-aa{
+    padding-bottom:60px;
 }
 .rigth-icon{
     width:30px;
@@ -243,10 +253,13 @@ ul{
   right:10px;
 }
 .header-b>.header-right>.rigth-list>.enter-i{
-    left: -678px;;
+
+    left: -700px;;
+    top:64px;
 }
 .header-b>.header-right>.rigth-login>.enter{
-    left: -216px;;
+    left: -310px;
+    top:64px;
 }
 .header-b>.header-right>div>div>a,.header-b>.header-right>div>div>div>a{
     padding:15px 100px;
@@ -350,22 +363,22 @@ ul{
     font-size:18px;
     background:#fff;
 }
-.list{
+.z-list{
     font-size: 0;
     margin:0 auto;
     width: 80vw;
 }
-.list>div{
+.z-list>div{
     width:19vw;
     height:15vw;
     display:inline-block;
     margin:1vw 1vw 2vw 0;
 }
-.list>div>img{
+.z-list>div>img{
     width:19vw;
     height:210px;
 }
-.list>div>div{
+.z-list>div>div{
     width:19vw;
     height: 60px;
     font-size:1vw;
@@ -568,19 +581,19 @@ width:14vw;
 .label-i{
     width: 1024px;
 }
-.list,.outer,.contact,.service>div,.story,.tail,.wb{
+.z-list,.outer,.contact,.service>div,.story,.tail,.wb{
     width: 820px;
     margin:20px 100px;
 }
-.list>div{
+.z-list>div{
     margin:16px 10px 32px 0;
     width: 195px;
     height: 80px;
 }
-.list>div>div{
+.z-list>div>div{
     width: 195px;
 }
-.list>div>img{
+.z-list>div>img{
     width:195px ;
 }
 .outer{
