@@ -42,6 +42,7 @@
                    color:'橙色',
                    size:'D',
                    theme:'射',
+                   count:999,
                    time:'2019年11月4日',
                },
                success(res){
@@ -70,6 +71,7 @@
                     <div type="text" class="color">${item.color}</div>
                     <div type="text" class="size">${item.size}</div>
                     <div type="text" class="theme">${item.theme}</div>
+                    <div type="text" class="count">${item.count}</div>
                     <div type="text" class="number">${item.time}</div>
                     <div class="delet" onclick="del(this)" data-id="${item.id}">删除</div>
                     <div class="" onclick="update_sp(this)" data-id="${item.id}">修改</div>
@@ -120,6 +122,7 @@
                 color:'橙色',
                 size:'D',
                 theme:'射',
+                count:999,
                 time:'2019年11月4日',
             },
             success(res) {
