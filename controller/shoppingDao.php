@@ -73,6 +73,13 @@ switch ($type){
         $count = $_POST['count'];
         $commodity->sp_generate($gid,$count);
         break;
+    case 'select_order':
+        $commodity->select_order();
+        break;
+    case 'select_seit':
+        $uid = $_POST['uid'];
+        $commodity->select_seit($uid);
+        break;
     case 'order_cj';//订单生产
         $uid = $_POST['uid'];
         $uname = $_POST['uname'];

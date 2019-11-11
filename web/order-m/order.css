@@ -1,0 +1,201 @@
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+    outline: none;
+    box-sizing: border-box;
+}
+html{
+ font-size: calc(10000vw  / 1300);
+}
+span{
+    margin-left: .1rem;
+    font-size: .14rem;
+}
+mark{
+    vertical-align: middle;
+}
+.order{
+    margin:0 auto;
+    width: 9.20rem;
+    margin-bottom: .5rem;
+}
+.order h2{
+    text-align: center;
+    margin:30px 0 .15rem 0;
+    font-weight: lighter;
+}
+.order-msg{
+    font-size: .15rem;
+    font-weight: bolder;
+    border-bottom: 1px solid #000;
+    padding-bottom: .05rem;
+}
+
+.order-add,.gwc_tb3{
+    display: inline-block;
+}
+
+.order-add{
+    width: 65%;
+    font-size:.15rem;
+    padding:.30rem;
+}
+.order-dz{
+    display: inline-block;
+    margin-bottom:.20rem;
+}
+.order-list{
+    font-size:0;
+    margin-bottom: .20rem;
+}
+.order-list p:nth-child(4),.order-list mark,select,.notice1,.notice4{
+    font-size:.15rem;
+}
+.order-list p:nth-child(4){
+    width: 3rem;
+    margin: .2rem 0 0 1.1rem;
+}
+.notice1,.notice4{
+    margin-left:1.65rem;
+}
+mark{
+    color:red;
+    background: #fff;
+}
+.order-inp{
+    width: 4rem;
+    height:.4rem;
+    font-size:.15rem;
+    padding:.08rem;
+    margin-left:.3rem;
+}
+.order-box{
+    display: inline-block;
+    margin:0 2px;
+    width: 1.1rem;
+    height:.40rem;
+    padding:.10rem;
+    font-size:.15rem;
+}
+.order-dress{
+    width: 2.9rem;
+    margin-left:0;
+}
+.order-prov{
+    margin-left:.28rem;
+}
+.order-prov,.order-dress{
+    vertical-align: top;
+}
+.order-province mark,.order-province span{
+    display: inline-block;
+    margin-top:.10rem;
+}
+.order-address>.order-inp{
+    width: 4rem;
+}
+.order-code>span:nth-last-child(1){
+    display: inline-block;
+    margin-left:.20rem;
+}
+button{
+    width: 1rem;
+    margin-top:.50rem;
+}
+.order-btn1{
+    margin-left:1.15rem;
+    /* margin-bottom: 40px; */
+}
+
+/* 右边支付 */
+.gwc_tb3{
+    width: 35%;
+    height: 430px;
+    text-align: center;
+    border:1px solid #eeeeee;
+    background:#f8f8f8;
+    padding-top: 50px;
+    margin-top: 40px;
+    float: right;
+}
+.tb3_td2 {
+    width: 100%;
+    text-align: center;
+}
+.tb3_td3 {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+.tb1tb1-ad {
+    margin: 30px 0;
+}
+.jz2 {
+    width: 90%;
+    height: 60px;
+    margin: 10px 5%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    background: #231177;
+    display: block;
+    float: right;
+    float: bottom;
+}
+.tb1tb1-ad {
+    margin: 30px 0;
+}
+.sp_left,.sp_right{
+    display: inline-block;
+    width: 48%;
+    vertical-align: middle;
+}
+.sp_left img {
+    width: 100%;
+}
+.shuxing div{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 13px;
+
+    color: #636363;
+}
+.part{
+    font-size: 20px;
+    font-weight: bold;
+}
+/*.neworder{*/
+    /*display:none;*/
+/*}*/
+.order-add{
+    display: none;
+}
+.order-bt{
+    display: inline-block;
+    width: 50%;
+}
+.order-index{
+    width: 50%;
+    padding: 20px;
+    border: solid 1px lightskyblue;
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: bold;
+}
+.order-index>div{
+    margin-bottom: 20px;
+}
+.od1{
+    font-size: 20px;
+}
+.od2{
+    font-size: 18px;
+}
+.od3{
+    font-size: 16px;
+}
+.od4{
+    font-size: 14px;
+}

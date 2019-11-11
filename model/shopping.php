@@ -112,12 +112,32 @@ class Commodity
             echo '{"code":"0"}';
         }
     }
+
+    function  select_order(){
+        $sql = "select * from tyorder";
+        $res = $this->db->query($sql);
+        if ($res){
+            echo json_encode($res);
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
     //订单生成页的信息查询
     function sp_generate($gid,$count){
         $sql = "select * from commodity where ID = '{$gid}'";
         $res = $this->db->query($sql);
         if ($res){
             echo json_encode($res);//找到商品 返回数据
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
+    //订单地址信息
+    function select_seit($uid){
+        $sql = "select * from site  where uid = ${uid}";
+        $res = $this->db->query($sql);
+        if ($res){
+            echo json_encode($res);
         }else{
             echo '{"code":"0"}';
         }

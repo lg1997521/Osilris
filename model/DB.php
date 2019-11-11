@@ -2,7 +2,7 @@
 class DB
 {
     private $host = "localhost";
-    private $username = "ycc";
+    private $username = "lang";
     private $pwd="123456";
     private $database="osiris";
 
