@@ -41,7 +41,7 @@ ul{
     padding:5px;
 }
 .header-right{
-    width:510px;
+    width:511px;
 }
 .header-left>span,.header-right>span,.rigth-a>span,.rigth-login,.rigth-list,.header-sp{
     position: relative;
@@ -363,38 +363,22 @@ ul{
     font-size:18px;
     background:#fff;
 }
-<<<<<<< HEAD
-.liist{
-=======
 .z-list{
->>>>>>> 79d11a7b1f76d7a0a681e3f50e1c0373210efbef
     font-size: 0;
     margin:0 auto;
     width: 80vw;
 }
-<<<<<<< HEAD
-.liist>div{
-=======
 .z-list>div{
->>>>>>> 79d11a7b1f76d7a0a681e3f50e1c0373210efbef
     width:19vw;
     height:15vw;
     display:inline-block;
     margin:1vw 1vw 2vw 0;
 }
-<<<<<<< HEAD
-.liist>div>img{
-    width:19vw;
-    height:210px;
-}
-.liist>div>div{
-=======
 .z-list>div>img{
     width:19vw;
     height:210px;
 }
 .z-list>div>div{
->>>>>>> 79d11a7b1f76d7a0a681e3f50e1c0373210efbef
     width:19vw;
     height: 60px;
     font-size:1vw;
@@ -404,7 +388,7 @@ ul{
 }
 .label-i>.label-i{
     width:400px;
-    margin:0 outo;
+    margin:0 auto;
 }
 .label-i>.label-ii :nth-child(3),.label .bx,.label>.label-l .jk,.label-l>.ps{
     font-size: 20px;
@@ -571,102 +555,107 @@ width:14vw;
 .wb>span{
     margin:0 20px;
 }
-@media screen and (max-width:1024px){
-.nav{
-    width:1024px;
-}
-.top, .entry,.er-header{
-    width: 800px;
-}
-.header-b{
-    font-size:15px;
-    width: 1024px;
-}
-.header-b a{
-    padding-right:10px ;
-}
-.header-b>div{
-    text-align: center;
-    display: inline-block;
-    width:135px;
-    float: none;
-  }
-.label{
-    width:1024px;
-}
-.label-i{
-    width: 1024px;
-}
-<<<<<<< HEAD
-.liist,.outer,.contact,.service>div,.story,.tail,.wb{
-    width: 820px;
-    margin:20px 100px;
-}
-.liist>div{
-=======
-.z-list,.outer,.contact,.service>div,.story,.tail,.wb{
-    width: 820px;
-    margin:20px 100px;
-}
-.z-list>div{
->>>>>>> 79d11a7b1f76d7a0a681e3f50e1c0373210efbef
-    margin:16px 10px 32px 0;
-    width: 195px;
-    height: 80px;
-}
-<<<<<<< HEAD
-.liist>div>div{
-    width: 195px;
-}
-.liist>div>img{
-=======
-.z-list>div>div{
-    width: 195px;
-}
-.z-list>div>img{
->>>>>>> 79d11a7b1f76d7a0a681e3f50e1c0373210efbef
-    width:195px ;
-}
-.outer{
-    height:358px;
-}
-.contact>div{
-    width:310px;
-}
-.contact>div>img{
-    margin: 40px 50px 40px 0;
-}
-.service>div>div{
-    width:200px;
-}
-.story{
-    margin:20px 100px;
-}
-.story>.nk>img{
-    width: 358px;
-    height:81px;
-}
-.story>div{
-    margin-right:45px;
-    width:154px;
-}
-.story>.nk{
-    width: 358px;
-}
-.story>div>img{
-    width: 154px;
-    height: 81px;
-}
-.tail>div{
-    width: 185px;
-    margin-right: 10px;
-}
-.layui-carousel{
-    width: 1024px;
-}
-.dig{
-    width: 1024px;
-}
+@media screen and (max-width:1024px) {
+    .nav {
+        width: 1024px;
+    }
 
+    .top, .entry, .er-header {
+        width: 800px;
+    }
 
+    .header-b {
+        font-size: 15px;
+        width: 1024px;
+    }
+
+    .header-b a {
+        padding-right: 10px;
+    }
+
+    .header-b > div {
+        text-align: center;
+        display: inline-block;
+        width: 135px;
+        float: none;
+    }
+
+    .label {
+        width: 1024px;
+    }
+
+    .label-i {
+        width: 1024px;
+    }
+
+    .z-list, .outer, .contact, .service > div, .story, .tail, .wb {
+        width: 820px;
+        margin: 20px 100px;
+    }
+
+    .z-list > div {
+        margin: 16px 10px 32px 0;
+        width: 195px;
+        height: 80px;
+    }
+
+    .z-list > div > div {
+        width: 195px;
+    }
+
+    .z-list > div > img {
+        width: 195px;
+    }
+
+    .outer {
+        height: 358px;
+    }
+
+    .contact > div {
+        width: 310px;
+    }
+
+    .contact > div > img {
+        margin: 40px 50px 40px 0;
+    }
+
+    .service > div > div {
+        width: 200px;
+    }
+
+    .story {
+        margin: 20px 100px;
+    }
+
+    .story > .nk > img {
+        width: 358px;
+        height: 81px;
+    }
+
+    .story > div {
+        margin-right: 45px;
+        width: 154px;
+    }
+
+    .story > .nk {
+        width: 358px;
+    }
+
+    .story > div > img {
+        width: 154px;
+        height: 81px;
+    }
+
+    .tail > div {
+        width: 185px;
+        margin-right: 10px;
+    }
+
+    .layui-carousel {
+        width: 1024px;
+    }
+
+    .dig {
+        width: 1024px;
+    }
 }
