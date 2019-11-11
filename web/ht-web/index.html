@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="修改port" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/ht-css/index.css">
+    <link rel="stylesheet" href="../../plug/layui/css/layui.css">
+    <link rel="stylesheet" href="../../css/ht-css/home.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" style="background: #fff;box-shadow: 0 0 10px rgba(0,0,0,.2);">
+        <div class="layui-logo">
+            <img src="../../resource/images/commodity/brandlogo.svg" alt="">
+        </div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="">商品管理</a></li>
+            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="../../resource/images/commodity/1572935370.jpeg" class="layui-nav-img">
+                    <span class="user"></span>
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item account-exit"><a href="register.html">退出账号</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black" style="background: #fff!important;box-shadow: 0 0.125rem 0.8rem rgba(0, 0, 0, 0.1);
+">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="btn" data-i="0">首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="btn" data-i="1">商品管理</a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:;">首饰</a>
+                            <dl class="layui-nav-child">
+                                <dd class="btn" data-i="2"><a href="javascript:;">项链与链坠</a></dd>
+                                <dd class="btn" data-i="3"><a href="javascript:;">坠饰</a></dd>
+                                <dd class="btn" data-i="4"><a href="javascript:;">耳环</a></dd>
+                                <dd class="btn" data-i="5"><a href="javascript:;">手链</a></dd>
+                                <dd class="btn" data-i="6"><a href="javascript:;">戒指</a></dd>
+                                <dd class="btn" data-i="7"><a href="javascript:;">胸针</a></dd>
+                                <dd class="btn" data-i="8"><a href="javascript:;">套装</a></dd>
+                                <dd class="btn" data-i="9"><a href="javascript:;">男士系列</a></dd>
+                            </dl>
+                        </dd>
+                        <dd class="layui-nav-item">
+                            <a href="javascript:;">高级珠宝</a>
+                            <dl class="layui-nav-child">
+                                <dd class="btn" data-i="10"><a href="javascript:;">耳环</a></dd>
+                                <dd class="btn" data-i="11"><a href="javascript:;">手链</a></dd>
+                                <dd class="btn" data-i="12"><a href="javascript:;">戒指</a></dd>
+                                <dd class="btn" data-i="13"><a href="javascript:;">项链</a></dd>
+                            </dl>
+                        </dd>
+                        <dd class="layui-nav-item">
+                            <a href="javascript:;">腕表</a>
+                            <dl class="layui-nav-child">
+                                <dd class="btn" data-i="14"><a href="javascript:;">项链链坠</a></dd>
+                                <dd class="btn" data-i="15"><a href="javascript:;">坠饰</a></dd>
+                                <dd class="btn" data-i="16"><a href="javascript:;">耳环</a></dd>
+                                <dd class="btn" data-i="17"><a href="javascript:;">手链</a></dd>
+                                <dd class="btn" data-i="18"><a href="javascript:;">戒指</a></dd>
+                                <dd class="btn" data-i="19"><a href="javascript:;">胸针</a></dd>
+                                <dd class="btn" data-i="20"><a href="javascript:;">套装</a></dd>
+                                <dd class="btn" data-i="21"><a href="javascript:;">男士系列</a></dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="btn" data-i="22">订单管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="btn" data-i="23">用户管理</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" class="btn" data-i="24">地址管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="card active-card">
+            <div class="">
+                <p>lalala</p>
+                <div id="container">
+                    <canvas id="chart" width="600" height="500"></canvas>
+                    <table id="chartData">
+                        <tr>
+                            <th>种类</th><th>销量</th>
+                        </tr>
+                        <tr style="color:#0DA068">
+                            <td>耳饰</td><td>10000</td>
+                        </tr>
+                        <tr style="color:#194E9C">
+                            <td>腕表</td><td>1316.00</td>
+                        </tr>
+                        <tr style="color:#ED9C13">
+                            <td>项链</td><td>712.49</td>
+                        </tr>
+                        <tr style="color:#ED5713">
+                            <td>戒指</td><td>3236.27</td>
+                        </tr>
+                        <tr style="color:#057249">
+                            <td>手链</td><td>6122.06</td>
+                        </tr>
+                        <tr style="color:#5F91DC">
+                            <td>吊坠</td><td>128.11</td>
+                        </tr>
+                        <tr style="color:#F88E5D">
+                            <td>胸针</td><td>245.55</td>
+                        </tr>
+                    </table>
+                </div>
+<!--            <div id="demo2"></div>-->
+            </div>
+            <div id="demo6" style="position: absolute;bottom:0;left: calc(100vw / 3)"></div>
+        </div>
+
+        <div class="card same">
+            <span class="site-demo-button" id="layerDemo" >
+                <button class="layui-btn add" lay-even="add" data-method="notice">添加</button>
+            </span>
+            <table class="layui-table" lay-data="{height:600,where: {type:'select_sp'}
+                    ,method:'post', url:'http://localhost/XAH190603/CXK/controller/htglDao.php', page:true, id:'idTest'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'goodname', width:100}">商品名称</th>
+                    <th lay-data="{field:'img', width:120,align: 'center', templet: '#imgtmp'}">商品图片</th>
+                    <th lay-data="{field:'magnifying',width:120, templet: '#imglist' }">详情图</th>
+                    <th lay-data="{field:'price', width:100, sort:true}">商品价格</th>
+                    <th lay-data="{field:'particulars', width:160}">商品详情</th>
+                    <th lay-data="{field:'Serialnumber', width:100, sort: true}">商品编号</th>
+                    <th lay-data="{field:'T1', width:60}">T1</th>
+                    <th lay-data="{field:'T2', width:60}">T2</th>
+                    <th lay-data="{field:'texttrue', width:100}">商品材质</th>
+                    <th lay-data="{field:'color', width:100}">商品颜色</th>
+                    <th lay-data="{field:'size', width:100}">商品尺寸</th>
+                    <th lay-data="{field:'theme', width:100}">商品主题</th>
+                    <th lay-data="{field:'count', width:100, sort:true}">商品数量</th>
+                    <th lay-data="{field:'time', width:100, sort:true}">上架日期</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
+                <th class="sd"></th>
+            </table>
+            <!--产品图片-->
+            <script type="text/html" id="imgtmp">
+                <img src="{{d.img}}" style="width: 100px" alt="">
+            </script>
+            <!--详情图-->
+            <script type="text/html" id="imglist">
+                {{# var srr=d.magnifying.split("|");
+                for(var j in srr) { srr[j] }}
+                <div style="margin:0 10px; display:inline-block !important; display:inline;  max-width:70px; max-height:50px;">
+                    <img style=" max-width:70px; max-height:50px;" src="{{srr[j]}}" />
+                </div>
+                {{#}}}
+            </script>
+            <!--删除修改按钮-->
+            <script type="text/html" id="barDemo" >
+                <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs "   lay-event="del">删除</a>
+            </script>
+        </div>
+        <div class="card same">
+            <span class="site-demo-button" id="layer" >
+                <button class="layui-btn add" lay-even="add" data-method="notice">添加</button>
+            </span>
+            <table class="layui-table" lay-data="{height:600,where: {type:'select_es'}
+                    ,method:'post', url:'http://localhost/XAH190603/CXK/controller/htglDao.php', page:true, id:'idTest'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'goodname', width:100}">商品名称</th>
+                    <th lay-data="{field:'img', width:120,align: 'center', templet: '#es-imgtmp'}">商品图片</th>
+                    <th lay-data="{field:'magnifying',width:120, templet: '#es-imglist' }">详情图</th>
+                    <th lay-data="{field:'price', width:100, sort:true}">商品价格</th>
+                    <th lay-data="{field:'particulars', width:160}">商品详情</th>
+                    <th lay-data="{field:'Serialnumber', width:100, sort: true}">商品编号</th>
+                    <th lay-data="{field:'T1', width:60}">T1</th>
+                    <th lay-data="{field:'T2', width:60}">T2</th>
+                    <th lay-data="{field:'texttrue', width:100}">商品材质</th>
+                    <th lay-data="{field:'color', width:100}">商品颜色</th>
+                    <th lay-data="{field:'size', width:100}">商品尺寸</th>
+                    <th lay-data="{field:'theme', width:100}">商品主题</th>
+                    <th lay-data="{field:'count', width:100, sort:true}">商品数量</th>
+                    <th lay-data="{field:'time', width:100, sort:true}">上架日期</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#es-barDemo'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+            <!--产品图片-->
+            <script type="text/html" id="es-imgtmp">
+                <img src="{{d.img}}" style="width: 100px" alt="">
+            </script>
+            <!--详情图-->
+            <script type="text/html" id="es-imglist">
+                {{# var srr=d.magnifying.split("|");
+                for(var j in srr) { srr[j] }}
+                <div style="margin:0 10px; display:inline-block !important; display:inline;  max-width:70px; max-height:50px;">
+                    <img style=" max-width:70px; max-height:50px;" src="{{srr[j]}}" />
+                </div>
+                {{#}}}
+            </script>
+            <!--删除修改按钮-->
+            <script type="text/html" id="es-barDemo" >
+                <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs "   lay-event="del">删除</a>
+            </script>
+        </div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+        <div class="card same"></div>
+
+        <!-- 订单 -->
+        <div class="card">
+<!--            <p class="order-text">提示:</p>-->
+            <p class="order-text">0:已下单,1:未发货,2:已发货,3:已收货,4:未收货,5:已完成</p>
+            <table class="layui-table" lay-data="{height:330, where: {type:'select_order'}
+                    ,method:'post', url:'http://localhost/XAH190603/CXK/controller/htglDao.php', page:true, id:'test'}" lay-filter="test">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'uid', sort: true, fixed: true}">用户id</th>
+                    <th lay-data="{field:'uname'}">用户名</th>
+                    <th lay-data="{field:'utel'}">电话</th>
+                    <th lay-data="{field:'ustie'}">收货地址</th>
+                    <th lay-data="{field:'count'}">商品数量</th>
+                    <th lay-data="{field:'goods'}">选购的所有商品</th>
+                    <th lay-data="{field:'time'}">下单时间</th>
+                    <th lay-data="{field:'status',sort:true}">订单状态</th>
+                    <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#order'}">操作</th>
+                </tr>
+                </thead>
+            </table>
+            <script type="text/html" id="order">
+                <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+            </script>
+        </div>
+
+        <div class="card">
+            <table id="demo" lay-filter="test"></table>
+        </div>
+
+        <div class="card">
+            <table id="site" lay-filter="test"></table>
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+
+    <form class="layui-form layui-form-pane1" id="form1" action="index.html" name="form1" style="display: none;" method="post" lay-filter="first1" enctype="multipart/form-data">
+        <div class="model-main">
+            <div class="box">
+                <span>商品名称:</span>
+                <input type="text" class="goodname">
+            </div>
+            <div class="box">
+                <span>商品图片:</span>
+                <div class="border">点击选择文件</div>
+                <input type="file" class="img">
+                <div class="up-img-btn">上传</div>
+                <!--            <input type="text" class="g-img">-->
+                <img style="width: 100px" src="" class="up-res" alt="">
+
+            </div>
+            <div class="box">
+                <span> 详情图:</span>
+                <div class="border border1">点击选择文件</div>
+                <input type="file" class="magnifying">
+                <div class="up-img-btn2">上传</div>
+                <div class="up-imglist">
+                </div>
+            </div>
+            <div class="box">
+                <span>商品价格:</span>
+                <input type="text" class="price">
+            </div>
+            <div class="box">
+                <span>商品详情:</span>
+                <input type="text" class="particulars">
+            </div>
+            <div class="box">
+                <span>商品编号:</span>
+                <input type="text" class="Serialnumber">
+            </div>
+            <div class="box">
+                <span>T1:</span>
+                <input type="text" class="T1">
+            </div>
+            <div class="box">
+                <span>T2:</span>
+                <input type="text" class="T2">
+            </div>
+            <div class="box">
+                <span>商品材质:</span>
+                <input type="text" class="texttrue">
+            </div>
+            <div class="box">
+                <span>商品颜色:</span>
+                <input type="text" class="color">
+            </div>
+            <div class="box">
+                <span>商品尺寸:</span>
+                <input type="text" class="size">
+            </div>
+            <div class="box">
+                <span>商品主题:</span>
+                <input type="text" class="theme">
+            </div>
+            <div class="box">
+                <span>商品数量:</span>
+                <input type="text" class="count">
+            </div>
+            <div class="box">
+                <span>上架日期:</span>
+                <input type="text" class="time">
+            </div>
+        </div>
+    </form>
+
+    <!--订单管理的修改弹框-->
+    <form class="layui-form layui-form-pane1" id="form2" action="index.html" name="form2" style="display: none;" method="post" lay-filter="first2" enctype="multipart/form-data">
+        <div style="margin: 10px" class="list-box">
+            <span>订单状态:</span>
+            <select name="frame" class="frame">
+                <option value="已下单">已下单</option>
+                <option value="未发货">未发货</option>
+                <option value="已发货">已发货</option>
+                <option value="已收货">已收货</option>
+                <option value="未收货">未收货</option>
+                <option value="已完成">已完成</option>
+            </select>
+        </div>
+    </form>
+
+
+    <!-- 删除弹框 -->
+    <div class="del-modal">
+            <div class="box1">
+                <div class="close">
+                    <span>删除</span>
+                    <i class="layui-icon layui-icon-close" style="font-size: 25px;float: right"></i>
+                </div>
+            </div>
+        <div class="del-main">
+            <p>确认删除这条信息？</p>
+            <div class="btns">
+                <div class="exit">取消</div>
+                <div class="del-sure">确定</div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="layui-footer">
+    </div>
+</div>
+
+<script src="../../plug/layui/layui.all.js"></script>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../../js/ht-js/upload.js"></script>
+<script src="../../js/ht-js/index.js"></script>
+<script src="../../js/ht-js/home.js"></script>
+
+</body>
+</html>

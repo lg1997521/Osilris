@@ -36,14 +36,16 @@ class Commoditys
     public $color;
     public $size;
     public $theme;
-    public $timer;
+    public $count;
+    public $time;
 
-    function __construct($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$timer)
+    function __construct($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$time)
     {
         $this->goodname =$goodname;
         $this->img = $img;
-        $this->mangnifying = $magnifying;
+        $this->magnifying = $magnifying;
         $this->price = $price;
+        $this->particulars = $particulars;
         $this->Serialnumber = $Serialnumber;
         $this->T1 = $T1;
         $this->T2 = $T2;
@@ -51,7 +53,30 @@ class Commoditys
         $this->color = $color;
         $this->size = $size;
         $this->theme = $theme;
-        $this->timer = $timer;
+        $this->count = $count;
+        $this->time = $time;
+    }
+}
+class Order
+{
+//    public $uid;
+//    public $uname;
+//    public $utel;
+//    public $ustie;
+//    public $count;
+//    public $goods;
+//    public $time;
+    public $status;
+    function __construct($status)
+    {
+//        $this->uid = $uid;
+//        $this->uname = $uname;
+//        $this->utel = $utel;
+//        $this->ustie = $ustie;
+//        $this->count = $count;
+//        $this->goods = $goods;
+//        $this->time = $time;
+        $this->status = $status;
     }
 }
 ?>

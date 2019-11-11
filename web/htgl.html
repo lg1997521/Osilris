@@ -58,6 +58,7 @@
                     type:'select_sp'
                 },
                 success(res) {
+                    console.log(res);
                     const obj = JSON.parse(res);
                     for (let item of obj){
                         let tr = $(`
@@ -105,7 +106,7 @@
             type:'post',
             url:'../controller/htglDao.php',
             data:{
-                type:'add_sp',
+                type:'update_sp',
                 id:id,
                 goodname:'星之守护者--辛德拉',
                 img:'http://localhost/XAH190603/PHP全栈/每日作业3/11-1/resource/images/commodity/bg6.jpg',
