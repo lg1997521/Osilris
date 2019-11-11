@@ -134,26 +134,63 @@ class Commodity
     }
 //价格排序
 
-//收藏页查询id信息
-    function sp_collect($uid,$gid){
-        //创建一个临时数据信息 存放用户id，商品id，数量信息
-        $sql = "insert into collect (uid,gid) values ('{$uid}','{$gid}')";
+//收藏页查询uid信息
+    function  sp_collect($uid){
+        //查询uid
+        $sql = "select * from collect where uid = '{$uid}'";
+
         $res = $this->db->query($sql);
-        if ($res){
+//        var_dump($res);
+        if ($res) {
+            echo json_encode($res);
+        } else {
+            echo '{"code":"0"}';
+        }
+    }
+
+    //查看收藏页商品信息
+    function z_collect($gid){
+        $sql = "select *  from  commodity   where  id = '{$gid}'";
+        $res = $this->db->query($sql);
+//        var_dump($res);
+        if ($res) {
+            echo json_encode($res);
+        } else {
+            echo '{"code":"0"}';
+        }
+    }
+    //查询商品列表id
+    function z_delete($id){
+        $sql = "select * from collect where id = '{$id}'";
+        $res = $this->db->query($sql);
+//        var_dump($res);
+        if($res){
+            echo json_encode($res);
+//            echo '{"code":"1"}';
+        }else{
+            echo '{"code":"0"}';
+        }
+    }
+    //删除商品列表id
+    function d_delete($uid,$id){
+        $sql = "delete from collect where uid= '{$uid}' and gid = '{$id}' ";
+        $res = $this->db->query($sql);
+        if($res){
             echo '{"code":"1"}';
         }else{
             echo '{"code":"0"}';
         }
     }
-    function z_collect($gid){
-        $sql = "select *  from  commodity   where  id = '{$gid}'";
+    function getGoodsByUid($gid,$uid){
+        $sql = "select * from shangping1 where gid= '{$gid}' and uid = '{$uid}' ";
+//        $sql = "select status from collect where gid = '{$gid}' and uid = '{$uid}'";
         $res = $this->db->query($sql);
+//        var_dump($res);
         if($res){
             echo json_encode($res);
         }else{
             echo '{"code":"0"}';
         }
-
     }
 
     /*------------------------后台管理部分---------------------------------------*/

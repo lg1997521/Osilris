@@ -89,15 +89,28 @@ switch ($type){
         $commodity->price_cj($pid,$price);
     /*---------------------后台管理部分-----------------------*/
     //收藏页
-    case 'sp_collect'://通过gid查询商品信息
-        $gid = $_POST['gid'];
-        $commodity->sp_collect($gid);
-        break;
-
-    case 'z_collect'://查询当前uid的购物信息
+    //收藏页
+    case 'sp_collect'://查询当前uid的购物信息
         $uid = $_POST['uid'];
-
-        $commodity->z_collect($uid);
+        $commodity->sp_collect($uid);
+        break;
+    case 'z_collect'://通过gid查询商品信息
+        $gid = $_POST['gid'];
+        $commodity->z_collect($gid);
+        break;
+    case 'z_delete'://查询点击的商品的id
+        $id = $_POST['id'];
+        $commodity->z_delete($id);
+        break;
+    case 'd_delete'://确定要删除的这条信息的id
+        $uid = $_POST['uid'];
+        $id = $_POST['id'];
+        $commodity->d_delete($uid,$id);
+        break;
+    case 'getGoodsByUid'://判断是否添加至购物车
+        $gid = $_POST['gid'];
+        $uid = $_POST['uid'];
+        $commodity->getGoodsByUid($gid,$uid);
         break;
 }
 
