@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .top-s{
+        width: 100%;
+        height:150px ;
+    }
+    .textsas{
+        color: #333;
+        font-size: 14px;
+        font-weight:bolder;
+    }
+    .shxxb{
+        width: 80%;
+        height: 180px;
+        margin: 0 auto;
+      
+    }
+    .shxx{
+        display: flex;
+        justify-content: space-between  ;
+    }
+    .sh{
+        display: inline-block;
+        width: 250px;
+        height: 106px;
+        padding: 11px 15px;
+        border:dashed 2px #f2f2f2;
+        vertical-align: middle;
+    }
+    .sh:hover{
+        border:dashed 2px lightblue;   
+        cursor: pointer; 
+    }
+    .shr{
+        border-bottom: solid 1px #f2f2f2;
+        font-weight: bolder;
+        font-size: 14px;
+        color: #666;
+    }
+    .zd{
+        color: #666;
+        font-size: 10px;
+    }
+    .xxs{
+        display: flex;
+        justify-content: space-between;
+        color: #c97;
+        margin: 15px 0px;
+    }
+    .xxs span:hover{
+        color: red;
+        cursor: pointer;
+    }
+    .sh-text{
+        color: #666;
+        font-size: 14px;
+    }
+    .shdh{
+        font-size: 14px;
+        color: #666;
+    }
+    .shd{
+        font-size: 12px;
+        color: #333;
+        height: 20px;
+        margin-top: 15px;
+        
+    }
+    .shd input{
+        vertical-align: middle;
+    }
+    mark{
+        background: red;
+        color: #ffffff;
+        padding: 0px 2px;
+    }
+    .shdz{
+        width: 80%;
+        height: 80px;
+        border: 2px solid #eee;
+        margin: 0 auto;
+    }
+    .dd{
+        width: 80%;
+        margin:  0 auto;
+        position: relative;
+    }
+    .dd-title{
+        font-size: 14px;
+        color: #333;
+        font-weight: bolder;
+        line-height: 25px;  
+        margin-top: 15px;
+    }
+    .ddxq{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-around;
+       
+    }
+    .ddxq >div{
+        width: 16.5%;
+        text-align: center;
+        display: inline-block;
+        padding-bottom: 2px;
+        font-size: 12px;
+        color: #6c6c6c;
+        border-bottom: solid 3px #b2d1ff;
+        
+    }
+    .dpm{
+        margin-top: 25px;
+        font-size: 12px;
+        border-bottom: 1px dotted #80b2ff;
+        padding-bottom: 10px;
+        color: #333;
+        cursor: pointer;
+    }
+    .ddxx{
+        display: flex;
+        justify-content: space-around;
+        color: #3c3c3c;
+        font-size: 12px;
+        background: #FBFCFF;
+        margin-top: 10px;
+    }
+    .spxx{
+        width: 200px;
+    }
+    .ddxx img{
+        width: 50px;
+        height: 50px;
+    }
+    .lxmj{
+        text-align: right;
+        padding: 20px 0px;
+        font-size: 12px;
+        color: #333;
+    }
+    .lxmj input{
+        width: 16px;
+        height: 16px;
+        background: #ffffff;
+        color: #ffffff;
+        vertical-align: middle;
+    }
+    .zfdiv{
+        display: flex;
+        justify-content: right;
+        text-align: right;
+    }
+    .zffs{
+        width: 512px;
+        height: 106px;
+        border: solid 1px red;
+        padding: 5px;
+        margin-left: 60%;
+    }
+    .lyb-top{
+        width: 100%;
+    }
+    .lt-l,.lt-r{
+        width: 49.7%;
+        height: 50px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-bottom: 3px;
+        
+    }
+    .lt-l{
+        background: #F2F7FF;
+        margin-top: 4px;
+    }
+    .lt-l input{
+        width: 300px;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .inp1{
+        background: #ffffff;
+        border: solid 1px yellowgreen;
+    }
+    .lyb{
+        font-size: 12px;
+        color: #333;
+        position: relative;
+    }
+    .lt-r span{
+        display: inline-block;
+        margin-left: 10px;
+    }
+    .lt-t,.lt-b{
+        padding: 4px 10px;
+        margin-top:2px;
+        background: #F2F7FF;
+    }
+    .lt-s{
+        position: absolute;
+        right: 10px;
+        color: rgb(255, 0, 54);
+    }
+    .lt-s1{
+        color: #333;
+    }
+    .lyb-bottom{
+        height: 30px;
+        font-size: 14px;
+        font-weight: bolder;
+        text-align: right;
+        background: #F2F7FF;
+    }
+    .zffs  .zfje,.zfje1{
+        display: inline-block;
+        color: rgb(255, 0, 54);
+        font-size: 26px;
+        font-weight: bolder;
+    }
+    .zffs div{
+        font-size: 12px;
+        font-family: '宋体';
+        margin-top: 8px;
+        color: #333;
+    }
+    .zf-bb{
+        margin-top: 10px;   
+    }
+    .qran{
+        position: absolute;
+        right: 10%;
+    }
+    .qran .inp-1{
+        border:none;
+        background: none;
+        color: #3366CC;
+        margin-right: 20px;
+        background: url(../ources/images/details/fh.png)  no-repeat;
+        background-size: 20px 10px; 
+        padding-left: 30px;
+        background-position:0% 50%;
+    }
+    .inp-1:hover{
+        color: red;
+        cursor: pointer;
+    }
+    .qran .inp-2{
+        width: 182px;
+        height: 40px;
+        background: rgb(255, 0, 54);
+        color: #ffffff;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    .jet{
+        color: rgb(255, 0, 54);
+    }
+    .footer{
+        width: 100%;
+        margin-top: 125px;
+        padding: 30px;
+        border-top: solid 1px #999;
+    }
+    .footer-bg{
+        background: url(../ources/images/header/h5.jpg) no-repeat;
+        height: 100px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+    }
+    .footer-list p{
+        color: #646464;
+    }
+    .footer-list a{
+        color: #8b8b8b;
+        font-family: ' MingLiU';
+        font-size: 12px;
+        display: block;
+        margin-top: 5px;
+    }
+    .footer-nav{
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer-list img{
+        width: 100px;
+        height: 100px;
+        margin-top: 5px;
+    }
+    .footer-bottom{
+        width: 100%;
+        text-align: center;
+        background: #000;
+        padding: 10px 40px;
+    }
+    .bottom-top-list a{
+        color: #999;
+        font-size: 14px;
+    }
+    .bottom-top-list{
+        margin-bottom: 10px;
+    }
+    .footer-bottom div span{
+        color: #777;
+        font-size: 12px;
+        margin-right: 30px;
+    }
+    .footer-bottom div{
+        margin-top: 10px;
+    }
+    /* .ddxx-1{
+      width: 500px;
+      height: 100px;
+    } */
+    .zfvl{
+        border: none;
+        width: 90px;
+        color: rgb(255, 0, 54);
+    }
+    .jet1{
+        width: 50px;
+        border: none;
+        background: none;
+    }
+    .mask{
+        width: 100vw;
+        height: 300vh;
+        background: rgba(0, 0, 0, .2);
+        position: absolute;
+        z-index: 10;
+        display: none;
+    }
+    .mask-1{
+        width: 400px;
+        height: 200px;
+        background: #ffffff;
+        position: absolute;
+        left: 40%;
+        top: 20%;
+        padding: 10px;
+        text-align: center;
+        color: #666666;
+    }
+    .mask div{
+        margin: 10px 0px;  
+    }
+    .mask-t:hover{
+        color: rgb(255, 0, 54);
+        cursor: pointer;
+    }
+    .mask-text{
+        font-size: 18px;
+        font-weight: bolder;
+        color: #333;
+    }
+    .mask-img {
+        text-align: center;
+        padding: 10px 0px;   
+    }
+    .mask-img img{
+        width: 40px;
+        
+    }
+    </style>
+</head>
+<body>
+    <!-- 支付成功 -->
+    <div class="mask">
+        <div class="mask-1">
+            <div class="mask-img"><img  src="../ources/images/details/cg.png" alt=""></div>
+            <div class="mask-text mask-t">恭喜您支付成功，正在为您跳转购物管理页</div>
+            <div class="mask-t"><span class="miao"></span>秒钟后自动跳转，请稍后</div>
+            <div class="mask-t"><a href="后台管理系统.html">直接跳转</a></div>
+        </div>
+    </div>
+    <div class="top-s">
+
+    </div>
+    <!-- 收货信息表 -->
+    <div class="shxxb">
+        <div class="textsas">请选择收货地址</div>
+        <div class="shxx">
+            <div class="sh" onclick="shdzxq(this)">
+                <div class="shr sh1">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="zd zd1"></div>
+                <div class="shdh"></div>
+            </div>
+            <div class="sh" onclick="shdzxq(this)" >
+                <div class="shr sh2">
+                        <span></span>
+                        <span></span>
+                </div>
+                <div class="zd zd2"></div>
+                <div class="shdh"></div>
+            </div>
+            <div class="sh" onclick="shdzxq(this)">
+                <div class="shr sh2">
+                        <span></span>
+                        <span></span>
+                </div>
+                <div class="zd zd2"></div>
+                <div class="shdh"></div>
+            </div>
+            <div class="sh" onclick="shdzxq(this)">
+                <div class="shr sh2">
+                        <span></span>
+                        <span></span>
+                </div>
+                <div class="zd zd2"></div>
+                <div class="shdh"></div>
+            </div>
+        </div>
+        <div class="xxs">
+            <span>显示全部地址</span>
+            <span>管理收货地址</span>
+        </div>
+    </div>
+    <!-- 具体收货地址 -->
+    <div class="shdz">
+        <div class="sh-text">
+            <span>菜鸟驿站代收服务</span>
+            <mark>免费</mark>
+        </div>
+        <div class="shd">
+            <input type="checkbox">
+            [菜鸟驿站]
+            <span>陕西省西安市雁塔区丈瞪羚二路与瞪羚一路交叉口红炉院子4楼（蓝鸥科技</span>
+            <span> (刘港) </span>
+            <span>  17691182044</span>
+        </div>
+    </div>
+    <!-- 确认订单信息 -->
+    <div class="dd">
+        <div class="dd-title">确认订单信息</div>
+        <div class="ddxq">
+            <div>店铺宝贝</div>
+            <div>商品属性</div>
+            <div>单价</div>
+            <div>数量</div>
+            <div>优惠方式</div>
+            <div>小计</div>
+        </div>
+        <div class="dpm">
+            <span>店铺：三只松鼠旗舰店</span>
+        </div>
+        <div class="ddxx">
+            <div class="sp-img"></div>
+            <div class="spxx"></div>
+            <div class="spdj"></div>
+            <div class="spsl"></div>
+            <div class="yhfs"></div>
+            <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-1">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="ddxx ddxx-2">
+                <div class="sp-img"></div>
+                <div class="spxx"></div>
+                <div class="spdj"></div>
+                <div class="spsl"></div>
+                <div class="yhfs"></div>
+                <div class="spje"></div>
+        </div>
+        <div class="lyb">
+            <div class="lyb-top">
+                <div class="lt-l">
+                  <span>给卖家留言</span>
+                  <input type="text">
+                </div>
+                <div class="lt-r">
+                        <div class="lt-t">
+                            <span>运送费：</span>
+                            <span>普通配送</span>
+                            <span>快递</span>
+                            <span>免邮</span>
+                            <span class="lt-s">0.00</span>
+                        </div>
+                        <div class="lt-b">
+                            <span>运费险：</span>
+                            <span><input type="checkbox"></span>
+                            <span>运费险</span>
+                            <span>￥1.80</span>
+                            <span></span>
+                            <span class="lt-s lt-s1">0</span>
+                        </div>
+                </div>
+            </div>
+            <div class="lyb-bottom">
+                    店铺合计(含运费)￥<span class="jet"><input type="text" value="0" class="jet1"></span>
+            </div>
+        </div>
+        <div class="lxmj">
+            <input type="checkbox" class="inp1">朋友代付
+            <input type="checkbox" class="inp2">匿名购买
+        </div>
+        <div class="zfdiv">
+        <div class="zffs">
+            <span>实付款：</span><span class="zfje1">￥</span><div class="zfje"><input type="text" value="0" class="zfvl"></div>
+            <div class="zf-bb">  <span>寄送至：</span> <span class="sjdz">陕西省西安市雁塔区丈瞪羚二路与瞪羚一路交叉口红炉院子4楼（蓝鸥科技）</span></div>
+          
+            <div> <span>收货人：</span> <span class="shr-xx">郑强</span> </div> 
+        </div>
+        </div>
+    </div>
+    <div class="qran">
+            <button class="inp-1">返回购物车</button>
+            <button class="inp-2">提交订单</button>
+        </div>
+    <!-- 确认按钮 -->
+    <div class="footer">
+            <div class="footer-bg"></div>
+            <ul class="footer-nav">
+                <li class="footer-list">
+                    <p>购物指南</p>
+                    <a href="">免费注册</a>
+                    <a href="">开通支付宝</a>
+                    <a href="">支付宝充值</a>
+                </li>
+                <li class="footer-list">
+                    <p>天猫保障</p>
+                    <a href="">发票保障</a>
+                    <a href="">售后规则</a>
+                    <a href="">缺货赔付</a>
+                </li>
+                <li class="footer-list">
+                    <p>支付方式</p>
+                    <a href="">快捷支付</a>
+                    <a href="">信用卡</a>
+                    <a href="">余额宝</a>
+                    <a href="">蚂蚁花呗</a>
+                    <a href="">货到付款</a>
+                </li>
+                <li class="footer-list">
+                    <p>商家服务</p>
+                    <a href="">天猫规则</a>
+                    <a href="">商家入驻</a>
+                    <a href="">商家中心</a>
+                    <a href="">天猫智库</a>
+                    <a href="">物流服务</a>
+                    <a href="">喵言喵语</a>
+                    <a href="">运营服务</a>
+                </li>
+                <li class="footer-list">
+                    <p>手机天猫</p>
+                    <img src="../ources/images/header/h4.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p class="bottom-top-list">
+                <a href="">关于天猫</a>
+                <a href="">帮助中心</a>
+                <a href="">开放平台</a>
+                <a href="">诚聘英才</a>
+                <a href="">联系我们</a>
+                <a href="">网站合作</a>
+                <a href="">法律声明</a>
+                <a href="">隐私政策</a>
+                <a href="">知识产权</a>
+                <a href="">廉政举报</a>
+            </p>
+            <span class="layui-breadcrumb" lay-separator="|">
+                <a href="">阿里巴巴集团</a>
+                <a href="">淘宝网</a>
+                <a href="">天猫</a>
+                <a href="">聚划算</a>
+                <a href="">全球速卖</a>
+                <a href="">阿里巴巴国际交易市场</a>
+                <a href="">1688</a>
+                <a href="">阿里妈妈</a>
+                <a href="">飞猪</a>
+                <a href="">阿里云计算</a>
+                <a href="">AliOS</a>
+                <a href="">阿里通信</a>
+                <a href="">万网</a>
+                <a href="">高德</a>
+            </span>
+            <div>
+                <span>增值电信业务经营许可证： 浙B2-20110446</span>
+                <span>市场名称登记证：工商网市字3301004119号</span>
+                <span>出版物网络交易平台服务经营备案证： 新出发浙备字第001号</span>
+            </div>
+            <div>
+                <span>互联网违法和不良信息举报电话：0571-81683755 blxxjb@alibaba-inc.com</span>
+                <span>互联网药品信息服务资质证书编号：浙-（经营性）-2017-0005</span>
+                <img src="../ources/images/header/h3.png" alt="">
+                <span>浙公网安备 33010002000120号</span>
+            </div>
+            <div>
+                <span>医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00002号</span>
+                <span>互联网药品交易服务资格证书：国A20150001</span>
+            </div>
+            <div>
+                <span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010002</span>
+                <span>12318举报</span>
+            </div>
+        </div>
+    <script src="../js/indexDB.js"></script>
+    <script>
+    //获取元素
+    var sh = document.querySelectorAll('.shxx .sh');
+    var shd = document.querySelector('.shd');
+    var shr = document.querySelectorAll('.sh .shr');
+    var ddxx = document.querySelectorAll('.dd .ddxx');
+    var zfje = document.querySelector('.zfje');
+    var sjdz = document.querySelector('.sjdz');
+    var shrw = document.querySelector('.shr-xx');
+    var jet = document.querySelector('.jet');
+    var yhfs = document.querySelector('.yhfs');
+    var spje = document.querySelectorAll('.ddxx .spje')
+    var zfvl = document.querySelector('.zfvl');
+    var list = document.querySelector('.lt-s1');
+    var jet1 = document.querySelector('.jet1');
+    var inp1 = document.querySelector('.inp-1')
+    var inp2 = document.querySelector('.inp-2');
+    var mask = document.querySelector('.mask');
+    var miao = document.querySelector('.miao');
+    var shra = document.querySelector('.shr-xx')
+    // var shdz = document.querySelector('.shdz')
+    var lst = document.querySelector('.lt-s');
+    var spsl = document.querySelectorAll('.ddxx .spsl')
+    console.log(ddxx);
+    //全局
+    var mm = 0;
+    var m = 0;
+    //获取收货信息
+    getList(6,'user',function(res){
+        for(var i = 0 ; i < res.length ; i++){
+            var data = res;
+        console.log(data);
+        //1
+        var n1 = data[i].name;
+        var s1 = data[i].sf;
+        var d1 = data[i].address;
+        var dh = data[i].tel;
+        var shs = sh[i].children[0].children[0];//收货省份
+        var shr = sh[i].children[0].children[1];//收货人
+        var shdz = sh[i].children[1];//收货地址
+        var shdh = sh[i].children[2];
+        shr.innerHTML = n1;
+        shs.innerHTML = s1;
+        shdz.innerHTML = d1;
+        shdh.innerHTML = dh;
+        }
+    })
+    //选择收货
+    function shdzxq(res){
+        console.log(res);
+        var data = res;
+        if(res.click){
+            var s1 = data.children[0].children[1].innerHTML;
+            var d1 = data.children[1].innerHTML;
+            var dh = data.children[2].innerHTML;
+            console.log(s1);
+            var sb1 = shd.children[1];
+            var sb = shd.children[2];
+            var dh1 = shd.children[3];
+            console.log(sb);
+            sb.innerHTML = '(' + s1 + ')';
+            sb1.innerHTML = d1;
+            dh1.innerHTML = dh;
+            sjdz.innerHTML = d1;
+            shrw.innerHTML = s1;
+           
+        }else{
+            console.log(2);
+        }  
+    }
+    getList(6,'lunbo',function(res){
+        for(var i = 0; i < res.length ; i++){
+            var data = res;
+        console.log(data);
+        //img
+        var url = data[i].rul;
+        var imgs = ddxx[i].children[0];
+        imgs.innerHTML = `
+            ` + url  + `
+        `;
+        //商品
+        var name = data[i].shopname;
+        var naems = ddxx[i].children[1];
+        naems.innerHTML = name;
+        //价格
+        var dj = data[i].price;
+        var prices = ddxx[i].children[2];
+        prices.innerHTML = dj;
+        lst.innerHTML = dj;
+        //数量
+        var slj = ddxx[i].children[3];
+        slj.innerHTML = data[i].sl;
+        //优惠
+        var yhs = ddxx[i].children[4];
+        yhs.innerHTML = '省138:天猫促销';
+        //小计
+        var sls = slj.innerHTML;
+        var xjs = ddxx[i].children[5];
+        xjs.innerHTML = Number(sls * dj);
+        }
+        //所有小计
+        for(var i = 0; i < data.length ; i++){
+            var bas = Number(spje[i].innerHTML);
+            var bbs = Number(zfvl.value);
+            var ls = Number(list.innerHTML);
+            var mn = zfvl.value = (bas + bbs);
+            jet1.value = mn;        
+        }  
+    })
+    //返回购物车
+    inp1.onclick = function(){
+        getList(6,'lunbo',function(res){
+            for(var i = 0 ; i < res.length ; i++){
+                var data = res[i].id;
+                console.log(data)
+                deleteData(6,'lunbo',data)
+            }
+            if(res.length == 0){
+                console.log('1')
+                window.location.href = '新购物车.html'
+            }  
+        })  
+    }
+    //提交订单
+    var i = 0;
+    inp2.onclick = function(){
+        clearInterval(timer);
+        mask.style.display = 'block';
+        var index = 5;
+        miao.innerHTML = Number(index);
+        var timer = setInterval(function(){
+            index--;
+            if(index == 0){
+                window.location.href = '后台管理系统.html'
+            }
+            miao.innerHTML = Number(index);
+        },1000)
+        setTimeout(function(){
+        mask.style.display = 'none';   
+        },5000)
+        i++;
+        //生成订单
+        getList(6,'user',function(res){
+            var data = res;
+            console.log(data)
+            var a = ddxx[0].children[1].innerHTML;
+            var a1 = shra.innerHTML;
+            var a2 = sjdz.innerHTML;
+            var b = ddxx[1].children[1].innerHTML;
+            var b1 = shra.innerHTML;
+            var b2 = sjdz.innerHTML;
+            var c = ddxx[2].children[1].innerHTML;
+            var c1 = shra.innerHTML;
+            var c2 = sjdz.innerHTML;
+            console.log(b);
+        //     add(6,'order',{
+        //     id:i,
+        //     dd:[a,a1,a2],
+        //     dd:[b,b1,b2],
+        //     dd:[c,c1,c2]
+        // })
+        getList(6,'order',function(el){
+            for(var j = 0 ; j < el.length; j++){
+            min = data[j].id;
+            // mm = mm + min;
+            mm = min +1;
+            console.log(mm);
+        }
+        add(6,'order',{
+                id:mm,
+                dd:[a,b,c],
+                dd1:[a1],
+                dd2:[a2]
+            })
+        })
+        })
+    }
+    </script>
+</body>
+</html>
