@@ -295,3 +295,28 @@ input,.border{
     font-size: 20px;
     color: #666666;
 }
+.layui-nav a{
+    color: #666 !important;
+}
+.layui-nav-item {
+    background: #fff !important;
+}
+.layui-nav-child a{
+    color: #666666 !important;
+}
+.layui-nav-item a{
+    color: #666666 !important
+}
+.layui-nav-tree .layui-nav-item a:hover {
+    background-color: #dddddd !important;
+}
+.layui-nav-tree .layui-this>a{
+    background-color: #cccccc !important;
+}
+.layui-nav-tree .layui-nav-item a{
+    background: #fff;
+    color: #666 !important;
+}
+.layui-nav .layui-nav-itemed>a:hover{
+    color: #666666;
+}
