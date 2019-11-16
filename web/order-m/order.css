@@ -170,19 +170,21 @@ button{
     /*display:none;*/
 /*}*/
 .order-add{
-    display: none;
+    /*display: none;*/
 }
 .order-bt{
     display: inline-block;
-    width: 50%;
+    width: 100%;
 }
 .order-index{
-    width: 50%;
+    width: 40%;
     padding: 20px;
-    border: solid 1px lightskyblue;
+    border: dashed 1px lightskyblue;
     display: inline-block;
     margin-top: 40px;
+    margin: 20px;
     font-weight: bold;
+    cursor: pointer;
 }
 .order-index>div{
     margin-bottom: 20px;
