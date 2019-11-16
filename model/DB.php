@@ -2,8 +2,12 @@
 class DB
 {
     private $host = "localhost";
+<<<<<<< HEAD
 
     private $username = "lang";
+=======
+    private $username = "ycc";
+>>>>>>> 3b94a41775dc6174d3d2474945fb378e89c44ac0
     private $pwd="123456";
     private $database="osiris";
 

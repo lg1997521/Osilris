@@ -44,6 +44,10 @@ switch ($type){
     $size = $_POST['size'];
     $theme = $_POST['theme'];
     $count = $_POST['count'];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b94a41775dc6174d3d2474945fb378e89c44ac0
     $time = $_POST['time'];
     $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$time);
     $manage->add_sp($commodity);
@@ -69,9 +73,15 @@ switch ($type){
     $size = $_POST['size'];
     $theme = $_POST['theme'];
     $count = $_POST['count'];
+<<<<<<< HEAD
     $time = $_POST['time'];
     $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$time);
     $manage->update_sp($id, $commodity);
+=======
+    $timer = $_POST['time'];
+    $commodity = new Commoditys($id,$goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$timer);
+    $manage->updata_sp($commodity);
+>>>>>>> 3b94a41775dc6174d3d2474945fb378e89c44ac0
     break;
     case 'update_order':
         $id = $_POST['id'];
