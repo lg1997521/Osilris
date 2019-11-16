@@ -44,13 +44,9 @@ switch ($type){
     $size = $_POST['size'];
     $theme = $_POST['theme'];
     $count = $_POST['count'];
-<<<<<<< HEAD
+
     $time = $_POST['time'];
     $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$time);
-=======
-    $timer = $_POST['time'];
-    $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$timer);
->>>>>>> 102076c0a648e2a1eb0b4f322a31a2d43987ee48
     $manage->add_sp($commodity);
     break;
     //删除商品信息
@@ -74,15 +70,9 @@ switch ($type){
     $size = $_POST['size'];
     $theme = $_POST['theme'];
     $count = $_POST['count'];
-<<<<<<< HEAD
-    $time = $_POST['time'];
-    $commodity = new Commoditys($goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$time);
-    $manage->update_sp($id, $commodity);
-=======
     $timer = $_POST['time'];
     $commodity = new Commoditys($id,$goodname,$img,$magnifying,$price,$particulars,$Serialnumber,$T1,$T2,$texttrue,$color,$size,$theme,$count,$timer);
     $manage->updata_sp($commodity);
->>>>>>> 102076c0a648e2a1eb0b4f322a31a2d43987ee48
     break;
     case 'update_order':
         $id = $_POST['id'];

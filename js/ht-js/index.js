@@ -447,6 +447,7 @@ function select_user(){
             type:'select_user',
         },
         success(res){
+            console.log(res);
             const obj = JSON.parse(res);
             for(item of obj){
                 let username = item.username;
